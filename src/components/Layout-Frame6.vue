@@ -9,7 +9,7 @@ export default {
 }
 </script> -->
 <script setup lang="ts">
-import { defineProps } from 'vue'
+// import { defineProps } from 'vue'
 import { usePhotosetStore } from '@/stores/photoset'
 
 const img = usePhotosetStore()
