@@ -1,0 +1,18 @@
+{
+  "files": [],
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "CommonJS",
+    "strictNullChecks": true,
+    "declaration": true,
+    "typeRoots": ["./types"]
+  },
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ]
+}
