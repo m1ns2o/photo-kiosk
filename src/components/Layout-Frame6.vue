@@ -59,7 +59,8 @@ const props = defineProps({
   flex-direction: column;
 
   overflow: hidden;
-
+// background-image: url('https://scontent-itm1-1.xx.fbcdn.net/v/t39.30808-6/274999501_1662543470754645_8311126417566091395_n.png?_nc_cat=101&ccb=1-7&_nc_sid=49d041&_nc_ohc=MHoeTtkHuYEAX92-SL9&_nc_ht=scontent-itm1-1.xx&oh=00_AfBzUAa_rDTGWBzVRdrMOvJoTmX4iyaPf77rQ7DQoE9NaQ&oe=65261280');
+  // background-image: url('http://127.0.0.1:8000/file/20.JPG');
   background-color: #333333;
   width: 4in;
   height: 6in;
@@ -75,6 +76,7 @@ const props = defineProps({
     gap: 10px;
     padding: 10px;
     padding-bottom: 0;
+    // background-image: url('https://scontent-itm1-1.xx.fbcdn.net/v/t39.30808-6/274999501_1662543470754645_8311126417566091395_n.png?_nc_cat=101&ccb=1-7&_nc_sid=49d041&_nc_ohc=MHoeTtkHuYEAX92-SL9&_nc_ht=scontent-itm1-1.xx&oh=00_AfBzUAa_rDTGWBzVRdrMOvJoTmX4iyaPf77rQ7DQoE9NaQ&oe=65261280');
 
     .layout__images__box {
       display: flex;
@@ -97,7 +99,7 @@ const props = defineProps({
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333333;
+    background-color: none;
     color: white;
     // min-height: 10px; //프레임 선택 때 비율 조정을 위한 최소 크기
     // height: 0px;

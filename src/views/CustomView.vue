@@ -1,37 +1,6 @@
-<!-- <script lang="ts">
-import Layout6 from '@/components/Layout-Frame6.vue'
-import PhotoList from '@/components/PhotoList.vue'
-export default {
-  components: {
-    Layout6,
-    PhotoList
-  },
-
-  data() {
-    return {
-      FrameHeight: 600,
-      qr: 'qwre',
-      layoutWidth: '400px',
-      layoutHeight: '600px',
-      borderwidth: '10px',
-      // imgWidth: '300px',
-      imgHeight: '190px'
-    }
-  },
-  computed: {
-    // layoutWidth(): string {
-    //   return (((this.FrameHeight * 2) / 3) as string) + 'px'
-    // },
-    // layoutHeight(): string {
-    //   return (this.FrameHeight as string) + 'px'
-    // }
-  }
-}
-</script> -->
 <script setup lang="ts">
 import Layout6 from '@/components/Layout-Frame6.vue'
-import PhotoList from '@/components/PhotoList.vue'
-import navbar from '@/components/navigation-view.vue'
+
 import { ref, computed } from 'vue'
 import { usePhotosetStore } from '@/stores/photoset'
 
@@ -47,9 +16,6 @@ const borderwidth = ref('10px')
 const imgHeight = ref('190px')
 
 const disabled = computed(() => img.selected == img.imgLength[img.frame])
-
-// You can also define computed properties here if needed
-// const layoutHeight = computed(() => `${(FrameHeight.value * 2 / 3)}px`)
 </script>
 <template>
   <div class="main">
@@ -59,7 +25,10 @@ const disabled = computed(() => img.selected == img.imgLength[img.frame])
       :qr="qr"
       :borderwidth="borderwidth"
     />
-    <PhotoList :imgHeight="imgHeight" />
+    <button type="button" @click="counter.increment">
+        <font-awesome-icon icon="fa-solid fa-plus" style="color: #ffffff" />
+      </button>
+    <!-- <PhotoList :imgHeight="imgHeight" /> -->
     <!-- <div class="shadow">
       <div class="card">
         <div class="content">
@@ -69,7 +38,7 @@ const disabled = computed(() => img.selected == img.imgLength[img.frame])
       </div>
     </div> -->
   </div>
-  <navbar link="/custom" :disabled="!disabled" />
+  <!-- <navbar link="asdfd" :disabled="!disabled" /> -->
 </template>
 
 <style lang="scss" scoped>

@@ -5,7 +5,7 @@ import Navbar from '@/components/navigation-view.vue'
 import { useCounterStore } from '@/stores/counter'
 
 const counter = useCounterStore()
-const link = '/payments'
+// const link = '/payments'
 </script>
 <template>
   <div class="main">
@@ -19,7 +19,7 @@ const link = '/payments'
       </button>
     </div>
   </div>
-  <navbar :link="link"></navbar>
+  <navbar link="/payments"></navbar>
 
 </template>
 

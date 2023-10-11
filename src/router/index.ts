@@ -5,6 +5,8 @@ import FrameView from '@/views/FrameView.vue'
 import PaymentsView from '@/views/PaymentsView.vue'
 import CountView from '@/views/CountView.vue'
 import PhotoView from '@/views/PhotoView.vue'
+import CustomView from '@/views/CustomView.vue'
+import PreshotView from '@/views/PreshotView.vue'
 import PiniaTest from '@/views/PiniaTest.vue'
 import Pinia2View from '@/views/Test2View.vue'
 
@@ -32,9 +34,19 @@ const router = createRouter({
       component: PaymentsView
     },
     {
+      path: '/preshot',
+      name: 'preshot',
+      component: PreshotView
+    },
+    {
       path: '/photo',
       name: 'photo',
       component: PhotoView
+    },
+    {
+      path: '/custom',
+      name: 'custom',
+      component: CustomView
     },
     {
       path: '/pinia',

@@ -1,33 +1,22 @@
-<!-- <script lang="ts">
-import Layout6 from '@/components/Layout-Frame6.vue'
-import card from '@/components/Card-View.vue'
-import navbar from '@/components/navigation-view.vue'
-
-export default {
-  components: {
-    Layout6,
-    card,
-    navbar
-  },
-  data() {
-    return {
-      layoutWidth: '160px',
-      layoutHeight: '240px',
-      footer: 'none',
-      borderwidth: '5px'
-    }
-  }
-}
-</script> -->
 <script setup lang="ts">
+import { onMounted } from 'vue';
 import Layout6 from '@/components/Layout-Frame6.vue'
 import Card from '@/components/Card-View.vue'
 import Navbar from '@/components/navigation-view.vue'
+import router from '@/router';
+
 
 const layoutWidth = '160px'
 const layoutHeight = '240px'
 const footer = 'none'
 const borderWidth = '5px'
+
+
+const paymentsAsync = () => {
+  router.push('/preshot')
+};
+
+
 </script>
 <template>
   <div class="main">
@@ -35,7 +24,7 @@ const borderWidth = '5px'
       <font-awesome-icon icon="fa-solid fa-credit-card" size="2xl" style="color: #000000" />
       <!-- <p>카드 결제</p> -->
     </div>
-    <div class="card">
+    <div class="card" @click="paymentsAsync">
       <font-awesome-icon icon="fa-solid fa-dollar-sign" size="2xl" style="color: #000000" />
     </div>
   </div>
