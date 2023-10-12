@@ -76,6 +76,7 @@ const props = defineProps({
         background-color: aliceblue;
     }
     .head{
+        padding: 4px;
         height: 30px;
         color: white;
         line-height: 30px;
