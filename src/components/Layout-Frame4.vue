@@ -54,7 +54,7 @@ const props = defineProps({
 <style lang="scss" scoped>
 
 .layout {
-    margin-left: 200px;
+    // margin-left: 200px;
     width: 400px;
     height: 600px;
     background-color: black;
