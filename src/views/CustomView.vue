@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import Layout6 from '@/components/Layout-Frame6.vue'
 import Layout3x2 from '@/components/Layout-Frame3x2.vue'
+import navbar from '@/components/navigation-view.vue'
+import FrameCustom from '@/components/Frame-Custom.vue'
 import { ref, computed } from 'vue'
 import { usePhotosetStore } from '@/stores/photoset'
 
@@ -16,80 +17,22 @@ const borderwidth = ref('10px')
 const imgHeight = ref('190px')
 
 const disabled = computed(() => img.selected == img.imgLength[img.frame])
+
+// You can also define computed properties here if needed
+// const layoutHeight = computed(() => `${(FrameHeight.value * 2 / 3)}px`)
 </script>
 <template>
   <div class="main">
     <Layout3x2></Layout3x2>
-    <button type="button" @click="counter.increment">
-        <font-awesome-icon icon="fa-solid fa-plus" style="color: #ffffff" />
-      </button>
-    <!-- <PhotoList :imgHeight="imgHeight" /> -->
-    <!-- <div class="shadow">
-      <div class="card">
-        <div class="content">
-          <slot></slot>
-        </div>
-        <div class="edge"></div>
-      </div>
-    </div> -->
+    <FrameCustom></FrameCustom>
   </div>
-  <!-- <navbar link="asdfd" :disabled="!disabled" /> -->
+  <navbar link="/custom" :disabled="!disabled" />
 </template>
 
 <style lang="scss" scoped>
-h2 {
-  width: 130px;
-  height: 40px;
-  line-height: 40px;
-  background-color: #303030;
-  color: white;
-  border-radius: 20px;
-}
 
-.card {
-  width: 300px;
-  height: 400px;
-  background-color: white;
-  // border: 1px solid gray;
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 100% 350px, 250px 100%, 0 100%);
-  display: flex;
-  flex-direction: column;
-  // justify-content: space-between;
-  align-items: flex-end;
-  /* drop-shadow: 23px 50px 8px 0px rgba(0, 0, 0, 0.3); */
-}
 
-.content {
-  width: 100%;
-  height: 100%;
-  padding: 50px;
-  font-size: 18px;
-  text-align: center;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-
-  gap: 50px;
-  // padding-top: 40px;
-  padding-bottom: 14px;
-  // margin-bottom: 0px;
-}
-.shadow {
-  filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.1));
-}
-.edge {
-  box-sizing: none;
-  width: 50px;
-  height: 50px;
-  clip-path: polygon(0 0, 0 100%, 100% 0);
-  background-color: black;
-  position: absolute;
-  bottom: 0;
-}
 
 .main {
   display: flex;

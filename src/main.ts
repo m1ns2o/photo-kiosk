@@ -15,12 +15,14 @@ import {
   faCaretRight,
   faCaretLeft,
   faDollarSign,
-  faCreditCard
+  faCreditCard,
+  faCircleHalfStroke,
+  faPalette
 } from '@fortawesome/free-solid-svg-icons'
 
 // import { faCreditCard } from '@fortawesome/free-regular-svg-icons'
 
-library.add(faPlus, faMinus, faCaretRight, faCaretLeft, faDollarSign, faCreditCard)
+library.add(faPlus, faMinus, faCaretRight, faCaretLeft, faDollarSign, faCreditCard, faCircleHalfStroke, faPalette)
 
 const app = createApp(App)
 
