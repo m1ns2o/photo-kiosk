@@ -7,6 +7,7 @@ import CountView from '@/views/CountView.vue'
 import PhotoView from '@/views/PhotoView.vue'
 import CustomView from '@/views/CustomView.vue'
 import PreshotView from '@/views/PreshotView.vue'
+import AftershotView from '@/views/AftershotView.vue'
 import PiniaTest from '@/views/PiniaTest.vue'
 import Pinia2View from '@/views/Test2View.vue'
 
@@ -37,6 +38,11 @@ const router = createRouter({
       path: '/preshot',
       name: 'preshot',
       component: PreshotView
+    },
+    {
+      path: '/aftershot',
+      name: 'aftershot',
+      component: AftershotView
     },
     {
       path: '/photo',

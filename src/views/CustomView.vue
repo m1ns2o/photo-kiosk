@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Layout6 from '@/components/Layout-Frame6.vue'
-
+import Layout3x2 from '@/components/Layout-Frame3x2.vue'
 import { ref, computed } from 'vue'
 import { usePhotosetStore } from '@/stores/photoset'
 
@@ -19,12 +19,7 @@ const disabled = computed(() => img.selected == img.imgLength[img.frame])
 </script>
 <template>
   <div class="main">
-    <Layout6
-      :layoutWidth="layoutWidth"
-      :layoutHeight="layoutHeight"
-      :qr="qr"
-      :borderwidth="borderwidth"
-    />
+    <Layout3x2></Layout3x2>
     <button type="button" @click="counter.increment">
         <font-awesome-icon icon="fa-solid fa-plus" style="color: #ffffff" />
       </button>

@@ -29,7 +29,7 @@ export default {
 }
 </script> -->
 <script setup lang="ts">
-import Layout6 from '@/components/Layout-Frame6.vue'
+import Layout3x2 from '@/components/Layout-Frame3x2.vue'
 import Layout4 from '@/components/Layout-Frame4.vue'
 import PhotoList from '@/components/PhotoList.vue'
 import navbar from '@/components/navigation-view.vue'
@@ -60,7 +60,7 @@ const disabled = computed(() => img.selected == img.imgLength[img.frame])
       :qr="qr"
       :borderwidth="borderwidth"
     /> -->
-    <Layout4></Layout4>
+    <Layout3x2></Layout3x2>
     <PhotoList :imgHeight="imgHeight" />
     <!-- <div class="shadow">
       <div class="card">

@@ -11,20 +11,15 @@ const borderWidth = '5px'
 
 onMounted(() =>{
     setTimeout(() => {
-        window.chrome.webview.postMessage("buttonClicked");
-        window.navigate2next = navigate2next
-    }, 2000);
+        console.log('navigate')
+        // window.chrome.webview.postMessage("buttonClicked");
+        router.push('/photo');
+    }, 1000);
 })
-
-const navigate2next = () => {
-    // alert('called' )
-
-    router.push('/aftershot');
-}
 </script>
 <template>
 		<load>
-            <h2>잠시 후 촬영이 시작됩니다.</h2>
+            <h2>사진을 불러오는 중 입니다.</h2>
         </load>
 </template>
 
