@@ -1,73 +1,62 @@
-<script lang="ts">
-//import { ref, onMounted } from 'vue'
-//import Vue from "vue";
-import * as html2canvas from 'html2canvas'
-import Layout6 from '@/components/Layout-Frame6.vue'
-import Layout4 from '@/components/Layout-Frame4.vue'
-import Layout4x2 from '@/components/Layout-Frame4x2.vue'
-import card from '@/components/Card-View.vue'
-// import { useCounterStore } from '@/stores/index'
+<template>
+  <div>
+    <div
+      v-for="option in colorOptions"
+      :key="option.value"
+      class="custom-radio"
+      @click="selectColor(option.value)"
+      :style="{backgroundColor:option.value}"
+    >
+      <div
+        class="radio-dot"
+        :class="{ 'radio-dot-selected': photoset.backgroundColor=== option.value }"
+      ></div>
+      {{ option.label }}
+    </div>
+    {{ photoset.backgroundColor }}
+  </div>
+</template>
 
-// const store = useCounterStore()
-//html2canvas scale옵션 찾아보기 -> 이미지 배율&해상도 옵션
+<script lang="ts" setup>
+import { ref } from 'vue';
+import { usePhotosetStore } from '@/stores/photoset'
 
-export default {
-  components: {
-    Layout6,
-    Layout4,
-    Layout4x2,
-    card
-  },
-  methods: {
-    downloadImg(): void {
-      html2canvas.default(this.$refs.layout).then((canvas) => {
-        const link = document.createElement('a')
-        link.download = 'filename.jpg'
-        link.href = canvas.toDataURL()
-        document.body.appendChild(link)
-        link.click()
-      })
-    }
-  },
-  data() {
-    return {
-      layoutWidth: '160px',
-      layoutHeight: '240px',
-      footer: 'none',
-      borderwidth: '5px'
-    }
-  }
-}
+const photoset = usePhotosetStore()
+
+const colorOptions = [
+  { label: "Option 1", value: "#000000" },
+  { label: "Option 2", value: "#176456" },
+  { label: "Option 3", value: "#177596" },
+  { label: "Option 4", value: "#993456" },
+
+];
+
+const selectedColor = ref<string | null>(null);
+
+const selectColor = (value: string) => {
+  // selectedColor.value = value;
+  photoset.backgroundColor = value;
+};
+
 </script>
 
-<template>
-  
-  <Layout4
-    />
+<style>
+.custom-radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
 
-  <button type="button" @click="downloadImg">download</button>
-  <button type="button" @click="increament">++</button>
-  <div class="container">
-    <Layout4x2></Layout4x2>
-    <Layout4x2></Layout4x2>
-  </div>
-  <card>
-    <Layout6
-      :layoutWidth="layoutWidth"
-      :layoutHeight="layoutHeight"
-      :footer="footer"
-      :borderwidth="borderwidth"
-    />
-    <h2>\5000</h2>
-  </card>
-  <font-awesome-icon :icon="['fas', 'caret-right']" />
-  <v-icon icon="home" />
-</template>
-<style lang="scss" scoped>
-  .container {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    // width: 900px;
-  }
+.radio-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  margin-right: 10px;
+}
+
+.radio-dot-selected {
+  background-color: #000;
+}
 </style>

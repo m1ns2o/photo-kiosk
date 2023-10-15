@@ -14,6 +14,7 @@ export const usePhotosetStore = defineStore('photoset', () => {
   const frame = ref(2)
   let index = 0
   const imgLength = <number[]>[4, 4, 6, 6]
+  const backgroundColor = ref("#303030")
   // const imgSrc = ref<string[]>([])
 
   const initialArray = Array(imgLength[frame.value]).fill('')
