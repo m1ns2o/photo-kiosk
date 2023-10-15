@@ -23,7 +23,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="layout">
+  <div class="layout" :style="{backgroundColor:img.backgroundColor }">
     <div class="img_box">
         <img :src="img.imgSrc[0]" alt="" />
     </div>

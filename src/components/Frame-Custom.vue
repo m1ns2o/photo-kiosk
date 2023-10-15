@@ -1,69 +1,110 @@
+<template>
+    <div class="main">
+        <div class="radio_custom">
+          <div class="radio_custom_button" @click="changeGrayscale(true)">
+              <div class="gray-scale">
+              </div>
+          </div>
+          <div class="radio_custom_button" @click="changeGrayscale(false)">
+              <div class="color-wheel"></div>
+          </div>
+      </div>
+    <div class="radio_custom">
+      <div
+        v-for="option in colorOptions"
+        :key="option"
+        class="custom-radio"
+        :class="{ 'radio-dot-selected': photoset.backgroundColor=== option }"
+        @click="selectColor(option)"
+      ><div
+          class="radio-dot"
+          :style="{backgroundColor:option}"
+        ></div>
+        <!-- {{ option.label }} -->
+      </div>
+      <!-- {{ photoset.backgroundColor }} -->
+    </div>
+    </div>
+  </template>
+  
 <script lang="ts" setup>
-import { ref } from 'vue'
 import { usePhotosetStore } from '@/stores/photoset'
 
-const img = usePhotosetStore()
+const photoset = usePhotosetStore()
 
-// const selected= ()=>{
+const colorOptions = <string[]>["#000000","#176456", "#60738D","#F9B75A"];
 
-// }
+const selectColor = (value: string) => {
+  // selectedColor.value = value;
+  photoset.backgroundColor = value;
+};
+
+const changeGrayscale = (val:boolean) => {
+  photoset.grayScale = val
+}
+
 </script>
-
-<template>
-  <div class="layout">
-    <div class="radio_custom">
-
-    </div>
-    <div class="radio_custom">
-        <div class="radio_custom_button">
-            <div class="gray-scale">
-                <div class="black"></div>
-            <div class="white"></div>
-            </div>
-        </div>
-        <div class="radio_custom_button">
-            <div class="color-wheel"></div>
-        </div>
-    </div>
-  </div>
-</template>
-
+  
 <style lang="scss" scoped>
-.layout {
+.main{
   display: flex;
   flex-direction: column;
-
-  overflow: hidden;
-  width: auto;
-  height: 600px;
-  background-color: aquamarine;
-  
-  
-
-    .radio_custom_button{
-        // width: 20px;
-        // border: 5px solid black;
-        background-color: var(--white);
-        box-shadow: 2px 2px 2px var(--gray);
-        border-radius: 50%;
-        // padding: 3px;
-    }
-
-    #count {
-      color: var(--white);
-      background-color: var(--black);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      h1 {
-        font-size: 70px;
+  flex-wrap: wrap;
+  // align-items: center;
+  // background-color: aquamarine;
+  align-content: center;
+      .radio_custom{
+          padding-left: 100px;
+          width: 300px;
+          height: 200px;
+          display: flex;
+          justify-content: space-between;
+          .radio_custom_button{
+              width: 55px;
+              height: 55px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              // border: 5px solid black;
+              background-color: var(--white);
+              box-shadow: 1px 1px 1px var(--gray);
+              border-radius: 50%;
+              // padding: 3px;
+              
+          }
+          .custom-radio {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 31px;
+              height: 31px;
+              border-radius: 50%;
+              box-shadow: 1px 1px 1px var(--gray);
+              // align-items: center;
+              cursor: pointer;
+          }
+          
+          .radio-dot {
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              border: 2px solid #fff;
+              // margin: 0;
+          }
+      
+          .radio-dot-selected {
+              border: 1px solid #fff;
+          }
+      } 
+      .radio_custom:first-child{
+        justify-content: space-around;
       }
-      h2 {
-        font-size: 15px;
-      }
-    
-  }
-  .gray-scale{
+      
+}
+
+
+
+.gray-scale{
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -85,8 +126,8 @@ const img = usePhotosetStore()
         magenta, 
         red
     );
-    
-}
+    }
 
-}
+
+
 </style>

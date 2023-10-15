@@ -15,6 +15,7 @@ export const usePhotosetStore = defineStore('photoset', () => {
   let index = 0
   const imgLength = <number[]>[4, 4, 6, 6]
   const backgroundColor = ref("#303030")
+  const grayScale = ref(false)
   // const imgSrc = ref<string[]>([])
 
   const initialArray = Array(imgLength[frame.value]).fill('')
@@ -60,7 +61,7 @@ export const usePhotosetStore = defineStore('photoset', () => {
       }
     }
   }
-  return { imgSrc, frame, imgLength, update, selected }
+  return { imgSrc, frame, imgLength, update, selected, backgroundColor, grayScale };
 })
 
 /*
