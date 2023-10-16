@@ -26,7 +26,7 @@ const disabled = computed(() => img.selected == img.imgLength[img.frame])
     <Layout3x2></Layout3x2>
     <FrameCustom></FrameCustom>
   </div>
-  <navbar link="/custom" :disabled="!disabled" />
+  <navbar link="/test" :disabled="!disabled" />
 </template>
 
 <style lang="scss" scoped>
