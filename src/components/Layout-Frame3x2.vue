@@ -46,7 +46,7 @@ const props = defineProps({
         <img :src="img.imgSrc[5]" alt="" :class="{ 'grayScale' : img.grayScale }"/>
     </div>
     <div class="footer">
-        <img class="qr" src="qr" alt="" :class="{ 'grayScale' : img.grayScale }">
+        <img class="qr" src="qr" alt="">
     </div>
   </div>
 </template>

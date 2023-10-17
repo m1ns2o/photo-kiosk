@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     downloadImg(): void {
-      html2canvas.default(this.$refs.layout, { scale: 10, useCORS: true }).then((canvas) => {
+      html2canvas.default(this.$refs.layout, { scale: 8, useCORS: true }).then((canvas) => {
         const link = document.createElement('a')
         link.download = 'filename.jpg'
         link.href = canvas.toDataURL()
@@ -29,10 +29,7 @@ export default {
   },
   data() {
     return {
-      layoutWidth: '160px',
-      layoutHeight: '240px',
-      footer: 'none',
-      borderwidth: '5px'
+      
     }
   }
 }
@@ -50,6 +47,6 @@ export default {
 </template>
 <style lang="scss" scoped>
   .img{
-    display: flex;
+    width: 400px;
   }
 </style>
