@@ -1408,6 +1408,7 @@ __metadata:
     npm-run-all: ^4.1.5
     pinia: ^2.1.6
     prettier: ^3.0.0
+    qrcode.vue: ^3.4.1
     sass: ^1.66.1
     typescript: ~5.1.6
     vite: ^4.4.9
@@ -3899,6 +3900,15 @@ __metadata:
   version: 2.3.0
   resolution: "punycode@npm:2.3.0"
   checksum: 39f760e09a2a3bbfe8f5287cf733ecdad69d6af2fe6f97ca95f24b8921858b91e9ea3c9eeec6e08cede96181b3bb33f95c6ffd8c77e63986508aa2e8159fa200
+  languageName: node
+  linkType: hard
+
+"qrcode.vue@npm:^3.4.1":
+  version: 3.4.1
+  resolution: "qrcode.vue@npm:3.4.1"
+  peerDependencies:
+    vue: ^3.0.0
+  checksum: 666dff14de29d00cb110faa6d9699e2bbad0fca329299493ee7938b1bce3bd03bb1ef15d7b742192e6aaef8ca88b01528e6fd639136c4e34a64601d7274cf7ea
   languageName: node
   linkType: hard
 

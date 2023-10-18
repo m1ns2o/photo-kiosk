@@ -48,6 +48,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["npm-run-all", "npm:4.1.5"],\
             ["pinia", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:2.1.6"],\
             ["prettier", "npm:3.0.3"],\
+            ["qrcode.vue", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:3.4.1"],\
             ["sass", "npm:1.66.1"],\
             ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"],\
             ["vite", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:4.4.9"],\
@@ -1962,6 +1963,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["npm-run-all", "npm:4.1.5"],\
             ["pinia", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:2.1.6"],\
             ["prettier", "npm:3.0.3"],\
+            ["qrcode.vue", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:3.4.1"],\
             ["sass", "npm:1.66.1"],\
             ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"],\
             ["vite", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:4.4.9"],\
@@ -4721,6 +4723,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/punycode-npm-2.3.0-df4bdce06b-39f760e09a.zip/node_modules/punycode/",\
           "packageDependencies": [\
             ["punycode", "npm:2.3.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["qrcode.vue", [\
+        ["npm:3.4.1", {\
+          "packageLocation": "./.yarn/cache/qrcode.vue-npm-3.4.1-ab9e618ca9-666dff14de.zip/node_modules/qrcode.vue/",\
+          "packageDependencies": [\
+            ["qrcode.vue", "npm:3.4.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:3.4.1", {\
+          "packageLocation": "./.yarn/__virtual__/qrcode.vue-virtual-5f56daa0b4/0/cache/qrcode.vue-npm-3.4.1-ab9e618ca9-666dff14de.zip/node_modules/qrcode.vue/",\
+          "packageDependencies": [\
+            ["qrcode.vue", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:3.4.1"],\
+            ["@types/vue", null],\
+            ["vue", "npm:3.3.4"]\
+          ],\
+          "packagePeers": [\
+            "@types/vue",\
+            "vue"\
           ],\
           "linkType": "HARD"\
         }]\

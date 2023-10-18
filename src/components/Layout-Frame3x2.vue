@@ -9,8 +9,13 @@ export default {
 }
 </script> -->
 <script setup lang="ts">
-// import { defineProps } from 'vue'
+import { ref } from 'vue'
 import { usePhotosetStore } from '@/stores/photoset'
+import QrcodeVue, { Level, RenderAs } from 'qrcode.vue'
+
+const value = ref('qrcode')
+const level = ref<Level>('M')
+const renderAs = ref<RenderAs>('svg')
 
 const img = usePhotosetStore()
 
@@ -46,7 +51,8 @@ const props = defineProps({
         <img :src="img.imgSrc[5]" alt="" :class="{ 'grayScale' : img.grayScale }"/>
     </div>
     <div class="footer">
-        <img class="qr" src="qr" alt="">
+        <!-- <img class="qr" src="qr" alt=""> -->
+        <qrcode-vue :value="value" :level="level" :render-as="renderAs" class="qr"/>
     </div>
   </div>
 </template>
@@ -85,13 +91,17 @@ const props = defineProps({
         height: 30px; 
     }
     .qr{
-        width: 25px;
-        height: 25px;
-        background-color: aquamarine;
+        width: 30px;
+        height: 30px;
+        // background-color: aquamarine;
         // right: inherit;
-        margin-top: 5px;
-        margin-right: 4px;
+        margin-top: 2px;
+        margin-right: 3px;
         float: right;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
     }
 }
 
@@ -99,6 +109,7 @@ img {
     max-width: 100%;
     max-height: 100%;
     display: block;
+    object-fit: cover;
 // margin: auto;
 }
 
