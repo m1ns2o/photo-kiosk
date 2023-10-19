@@ -1406,6 +1406,7 @@ __metadata:
     eslint-plugin-vue: ^9.16.1
     html2canvas: ^1.4.1
     npm-run-all: ^4.1.5
+    opencv.js: ^1.2.1
     pinia: ^2.1.6
     prettier: ^3.0.0
     qrcode.vue: ^3.4.1
@@ -3660,6 +3661,13 @@ __metadata:
     is-inside-container: ^1.0.0
     is-wsl: ^2.2.0
   checksum: 3993c0f61d51fed8ac290e99c9c3cf45d3b6cfb3e2aa2b74cafd312c3486c22fd81df16ac8f3ab91dd8a4e3e729a16fc2480cfc406c4833416cf908acf1ae7c9
+  languageName: node
+  linkType: hard
+
+"opencv.js@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "opencv.js@npm:1.2.1"
+  checksum: 73bd76c794504d616a3f9cb8ca6c7420fab181b7a8e6101ff96b25069289db435e22e358756542b1345b8a9746674a654e8606a131ecf2780dade3103a61f095
   languageName: node
   linkType: hard
 

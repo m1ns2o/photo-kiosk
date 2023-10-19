@@ -17,6 +17,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/vue-fontawesome": "latest-3",
+    "opencv.js": "^1.2.1",
     "pinia": "^2.1.6",
     "qrcode.vue": "^3.4.1",
     "vue": "^3.3.4",

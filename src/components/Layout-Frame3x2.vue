@@ -9,21 +9,27 @@ export default {
 }
 </script> -->
 <script setup lang="ts">
+// import cv from 'opencv.js'
 import { ref } from 'vue'
 import { usePhotosetStore } from '@/stores/photoset'
 import QrcodeVue, { Level, RenderAs } from 'qrcode.vue'
+
 
 const value = ref('qrcode')
 const level = ref<Level>('M')
 const renderAs = ref<RenderAs>('svg')
 
 const img = usePhotosetStore()
-
+// const applyGrayscaleFilter = async (imageElementId)=> {
+//     let src = cv.imread(imageElementId)
+//     let dst = new cv.Mat()
+//     cv.cvtColor(src, dst, cv.COLOR_RGBA2GRAY)
+//     cv.imshow(imageElementId, dst)
+//     src.delete()
+//     dst.delete()
+//   }
 const props = defineProps({
-  layoutWidth: String,
-  layoutHeight: String,
   qr: String,
-  borderwidth: String
 })
 </script>
 
@@ -33,28 +39,37 @@ const props = defineProps({
         hello World
     </div>
     <div class="img_box">
-        <img :src="img.imgSrc[0]" alt="" :class="{ 'grayScale' : img.grayScale }"/>
+        <img :src="img.imgSrc[0]" alt=""  v-show="!img.grayScale"/>
+        <img :src="img.imgSrc[0]+'/grayscale'" alt=""  v-show="img.grayScale"/>
+        <!-- v-show로 그레이 스케일 뷰 갈아끼기
+         -->
     </div>
     <div class="img_box">
-        <img :src="img.imgSrc[1]" alt="" :class="{ 'grayScale' : img.grayScale }"/>
+        <img :src="img.imgSrc[1]" alt=""  v-show="!img.grayScale"/>
+        <img :src="img.imgSrc[1]+'/grayscale'" alt=""  v-show="img.grayScale"/>
     </div>
     <div class="img_box">
-        <img :src="img.imgSrc[2]" alt="" :class="{ 'grayScale' : img.grayScale }"/>
+        <img :src="img.imgSrc[2]" alt=""  v-show="!img.grayScale"/>
+        <img :src="img.imgSrc[2]+'/grayscale'" alt=""  v-show="img.grayScale"/>
     </div>
     <div class="img_box">
-        <img :src="img.imgSrc[3]" alt="" :class="{ 'grayScale' : img.grayScale }"/>
+        <img :src="img.imgSrc[3]" alt=""  v-show="!img.grayScale"/>
+        <img :src="img.imgSrc[3]+'/grayscale'" alt=""  v-show="img.grayScale"/>
     </div>
     <div class="img_box">
-        <img :src="img.imgSrc[4]" alt="" :class="{ 'grayScale' : img.grayScale }"/>
+        <img :src="img.imgSrc[4]" alt=""  v-show="!img.grayScale"/>
+        <img :src="img.imgSrc[4]+'/grayscale'" alt=""  v-show="img.grayScale"/>
     </div>
     <div class="img_box">
-        <img :src="img.imgSrc[5]" alt="" :class="{ 'grayScale' : img.grayScale }"/>
+        <img :src="img.imgSrc[5]" alt=""  v-show="!img.grayScale"/>
+        <img :src="img.imgSrc[5]+'/grayscale'" alt=""  v-show="img.grayScale"/>
     </div>
     <div class="footer">
         <!-- <img class="qr" src="qr" alt=""> -->
-        <qrcode-vue :value="value" :level="level" :render-as="renderAs" class="qr"/>
+        <qrcode-vue :value="qr" :level="level" :render-as="renderAs" v-show="qr" class="qr"/>
     </div>
   </div>
+  <!-- <button @click="applyGrayscaleFilter('img1')">Apply Grayscale</button> -->
 </template>
 
 <style lang="scss" scoped>
@@ -111,10 +126,6 @@ img {
     display: block;
     object-fit: cover;
 // margin: auto;
-}
-
-.grayScale{
-    filter: grayscale(100%);
 }
 
 </style>

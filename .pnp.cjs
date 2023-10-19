@@ -46,6 +46,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-vue", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:9.17.0"],\
             ["html2canvas", "npm:1.4.1"],\
             ["npm-run-all", "npm:4.1.5"],\
+            ["opencv.js", "npm:1.2.1"],\
             ["pinia", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:2.1.6"],\
             ["prettier", "npm:3.0.3"],\
             ["qrcode.vue", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:3.4.1"],\
@@ -1961,6 +1962,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-vue", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:9.17.0"],\
             ["html2canvas", "npm:1.4.1"],\
             ["npm-run-all", "npm:4.1.5"],\
+            ["opencv.js", "npm:1.2.1"],\
             ["pinia", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:2.1.6"],\
             ["prettier", "npm:3.0.3"],\
             ["qrcode.vue", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:3.4.1"],\
@@ -4440,6 +4442,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["define-lazy-prop", "npm:3.0.0"],\
             ["is-inside-container", "npm:1.0.0"],\
             ["is-wsl", "npm:2.2.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["opencv.js", [\
+        ["npm:1.2.1", {\
+          "packageLocation": "./.yarn/cache/opencv.js-npm-1.2.1-5cd9cdad51-73bd76c794.zip/node_modules/opencv.js/",\
+          "packageDependencies": [\
+            ["opencv.js", "npm:1.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\
