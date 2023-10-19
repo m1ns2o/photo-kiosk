@@ -54,24 +54,10 @@ const disabled = computed(() => img.selected == img.imgLength[img.frame])
 </script>
 <template>
   <div class="main">
-    <!-- <Layout6
-      :layoutWidth="layoutWidth"
-      :layoutHeight="layoutHeight"
-      :qr="qr"
-      :borderwidth="borderwidth"
-    /> -->
     <Layout3x2></Layout3x2>
     <PhotoList :imgHeight="imgHeight" />
-    <!-- <div class="shadow">
-      <div class="card">
-        <div class="content">
-          <slot></slot>
-        </div>
-        <div class="edge"></div>
-      </div>
-    </div> -->
   </div>
-  <navbar link="/custom" :disabled="!disabled" />
+  <navbar :show_back="false" link="/custom" :disabled="!disabled" />
 </template>
 
 <style lang="scss" scoped>

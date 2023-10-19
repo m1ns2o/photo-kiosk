@@ -17,6 +17,7 @@ export default {
 </script> -->
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
+// import { defineProps } from 'vue'
 
 const props = defineProps({
   link: {
@@ -26,6 +27,10 @@ const props = defineProps({
   disabled: {
     type: Boolean,
     default: false
+  },
+  show_back: {
+    type: Boolean,
+    default: true
   }
 })
 
@@ -39,13 +44,13 @@ const back = () => {
 <template>
   <nav>
     <div class="btn">
-      <button type="button" @click="back" id="prev">
+      <button type="button" @click="back" id="prev" v-if="show_back">
         <font-awesome-icon :icon="['fas', 'caret-left']" size="2xl" />PREV
       </button>
     </div>
     <!-- <p>link : {{ link }}</p> -->
     <router-link :to="link">
-      <div type="button" class="btn" v-show="link">
+      <div type="button" class="btn" v-if="link">
         <button id="next" :disabled="disabled">
           NEXT <font-awesome-icon :icon="['fas', 'caret-right']" size="2xl" />
         </button>
