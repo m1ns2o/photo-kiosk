@@ -65,11 +65,9 @@ const props = defineProps({
         <img :src="img.imgSrc[5]+'/grayscale'" alt=""  v-show="img.grayScale"/>
     </div>
     <div class="footer">
-        <!-- <img class="qr" src="qr" alt=""> -->
         <qrcode-vue :value="qr" :level="level" :render-as="renderAs" v-show="qr" class="qr"/>
     </div>
   </div>
-  <!-- <button @click="applyGrayscaleFilter('img1')">Apply Grayscale</button> -->
 </template>
 
 <style lang="scss" scoped>

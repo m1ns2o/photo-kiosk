@@ -17,12 +17,13 @@ import {
   faDollarSign,
   faCreditCard,
   faCircleHalfStroke,
-  faPalette
+  faPalette,
+  faPrint,
 } from '@fortawesome/free-solid-svg-icons'
 
 // import { faCreditCard } from '@fortawesome/free-regular-svg-icons'
 
-library.add(faPlus, faMinus, faCaretRight, faCaretLeft, faDollarSign, faCreditCard, faCircleHalfStroke, faPalette)
+library.add(faPlus, faMinus, faCaretRight, faCaretLeft, faDollarSign, faCreditCard, faCircleHalfStroke, faPalette, faPrint)
 
 const app = createApp(App)
 
