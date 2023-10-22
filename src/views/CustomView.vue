@@ -2,37 +2,54 @@
 import Layout3x2 from '@/components/Layout-Frame3x2.vue'
 import navbar from '@/components/navigation-view.vue'
 import FrameCustom from '@/components/Frame-Custom.vue'
-import { ref, computed } from 'vue'
+import * as html2canvas from 'html2canvas';
+import { ref, nextTick } from 'vue'
 import { usePhotosetStore } from '@/stores/photoset'
+import axios from 'axios';
 
 const img = usePhotosetStore()
-// const FrameHeight = ref(600)
-// const layoutHeight = computed(() => `${FrameHeight.value}px`)
 
-const qr = ref('qwre')
-const layoutWidth = ref('4in')
+const layoutRef = ref(null);
 
-const layoutHeight = ref('6in')
-const borderwidth = ref('10px')
-const imgHeight = ref('190px')
+const qr_link = ref("");
+const downloadImg = async () => {
+  if (layoutRef.value) {
+    const canvas = await html2canvas.default(layoutRef.value, { scale: 8, useCORS: true });
+    
+    const res = await axios.get('http://127.0.0.1:8000/qr')
+    
+    await axios.post('http://127.0.0.1:8080/save', { image_addr: res.data.qr,image_data: canvas.toDataURL()  });
+    qr_link.value = res.data.qr
+    await nextTick();
+    const newCanvas = await html2canvas.default(layoutRef.value, { scale: 8, useCORS: true });
+    await axios.post('http://127.0.0.1:8000/save', { image_data: newCanvas.toDataURL()  });
+  }
+};
 
-const disabled = computed(() => img.selected == img.imgLength[img.frame])
+// 아래의 increament 함수가 정의되지 않았기 때문에 일단 주석 처리하겠습니다.
+const increament = () => {
+  // location.reload();
 
-// You can also define computed properties here if needed
-// const layoutHeight = computed(() => `${(FrameHeight.value * 2 / 3)}px`)
+  qr_link.value = "qwewerwer"
+  console.log(qr_link.value);
+};
 </script>
 <template>
   <div class="main">
-    <Layout3x2></Layout3x2>
+    <div class="img" ref="layoutRef">
+      <Layout3x2 :qr="qr_link"></Layout3x2>
+    </div>
     <FrameCustom></FrameCustom>
   </div>
 
   <nav>
     <div class="btn">
-
+      <button type="button" @click="increament">
+        PRINT <font-awesome-icon :icon="['fas', 'print']" size="2xl" />
+      </button>
     </div>
       <div type="button" class="btn">
-        <button id="print">
+        <button id="print" type="button" @click="downloadImg">
           PRINT <font-awesome-icon :icon="['fas', 'print']" size="2xl" />
         </button>
       </div>
@@ -50,6 +67,9 @@ const disabled = computed(() => img.selected == img.imgLength[img.frame])
   align-items: center;
   gap: 30px;
   height: 90%;
+  .img{
+    width: 400px;
+  }
 }
 
 nav {

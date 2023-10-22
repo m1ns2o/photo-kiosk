@@ -68,6 +68,7 @@ const props = defineProps({
         <qrcode-vue :value="qr" :level="level" :render-as="renderAs" v-show="qr" class="qr"/>
     </div>
   </div>
+  
 </template>
 
 <style lang="scss" scoped>

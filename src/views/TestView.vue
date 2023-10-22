@@ -21,6 +21,8 @@ const downloadImg = async () => {
 
 // 아래의 increament 함수가 정의되지 않았기 때문에 일단 주석 처리하겠습니다.
 const increament = () => {
+  location.reload();
+
   qr_link.value = "qwewerwer"
   console.log(qr_link.value);
 };
