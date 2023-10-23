@@ -14,15 +14,20 @@ const layoutRef = ref(null);
 const qr_link = ref("");
 const downloadImg = async () => {
   if (layoutRef.value) {
-    const canvas = await html2canvas.default(layoutRef.value, { scale: 8, useCORS: true });
+    const startTime = performance.now();
+    const canvas = await html2canvas.default(layoutRef.value, { scale: 6, useCORS: true });
     
     const res = await axios.get('http://127.0.0.1:8000/qr')
     
-    await axios.post('http://127.0.0.1:8080/save', { image_addr: res.data.qr,image_data: canvas.toDataURL()  });
+    axios.post('http://127.0.0.1:8080/save', { image_addr: res.data.qr,image_data: canvas.toDataURL()  });
     qr_link.value = res.data.qr
     await nextTick();
-    const newCanvas = await html2canvas.default(layoutRef.value, { scale: 8, useCORS: true });
-    await axios.post('http://127.0.0.1:8000/save', { image_data: newCanvas.toDataURL()  });
+    const newCanvas = await html2canvas.default(layoutRef.value, { scale: 6, useCORS: true });
+    axios.post('http://127.0.0.1:8000/save', { image_data: newCanvas.toDataURL()  });
+    const endTime = performance.now();
+const elapsedTime = endTime - startTime;
+console.log(`실행 시간: ${elapsedTime.toFixed(2)}ms`);
+    //counter store로 출력해야하는 장수 전송하기 + 레이아웃 6x2 6x4도 데이터 전송하기
   }
 };
 

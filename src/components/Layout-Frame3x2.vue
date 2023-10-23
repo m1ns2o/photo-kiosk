@@ -65,7 +65,7 @@ const props = defineProps({
         <img :src="img.imgSrc[5]+'/grayscale'" alt=""  v-show="img.grayScale"/>
     </div>
     <div class="footer">
-        <qrcode-vue :value="qr" :level="level" :render-as="renderAs" v-show="qr" class="qr"/>
+        <qrcode-vue :value="qr" :level="level" :render-as="renderAs" :margin="1" v-show="qr" class="qr"/>
     </div>
   </div>
   
@@ -103,16 +103,20 @@ const props = defineProps({
     }
     .footer {
         height: 30px; 
+        padding-top: 2px;
+        padding-right: 3px;
     }
     .qr{
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
         // background-color: aquamarine;
         // right: inherit;
-        margin-top: 2px;
-        margin-right: 3px;
+        // margin-top: 2px;
+        // margin-right: 3px;
         float: right;
+        
         img {
+            // padding: 5px;
             max-width: 100%;
             max-height: 100%;
         }
