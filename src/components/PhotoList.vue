@@ -4,6 +4,8 @@ import { usePhotosetStore } from '@/stores/photoset'
 
 const img = usePhotosetStore()
 
+// const local_server:string = import.meta.env.VITE_LOCAL_SERVER;
+const local_server:string = "http://127.0.0.1:8008"
 // const selected= ()=>{
 
 // }
@@ -11,59 +13,62 @@ const imgList = ref<boolean[]>([false, false, false, false, false, false, false,
 </script>
 
 <template>
+  
   <div class="layout" ref="layout">
+    
     <div class="layout__images">
       <div
         class="layout__images__box"
-        @click="imgList[0] = img.update('http://127.0.0.1:8000/file/0.JPG')"
+        @click="imgList[0] = img.update(local_server + '/file/0.JPG')"
       >
+      
         <img
-          src="http://127.0.0.1:8000/file/0.JPG"
+          :src="local_server + '/file/0.JPG'"
           alt="사진을 불러올 수"
           :class="{ selected: imgList[0] }"
         />
       </div>
       <div
         class="layout__images__box"
-        @click="imgList[1] = img.update('http://127.0.0.1:8000/file/1.JPG')"
+        @click="imgList[1] = img.update(local_server + '/file/1.JPG')"
       >
-        <img src="http://127.0.0.1:8000/file/1.JPG" alt="" :class="{ selected: imgList[1] }" />
+        <img :src="local_server + '/file/1.JPG'" alt="" :class="{ selected: imgList[1] }" />
       </div>
       <div
         class="layout__images__box"
-        @click="imgList[2] = img.update('http://127.0.0.1:8000/file/2.JPG')"
+        @click="imgList[2] = img.update(local_server + '/file/2.JPG')"
       >
-        <img src="http://127.0.0.1:8000/file/2.JPG" alt="" :class="{ selected: imgList[2] }" />
+        <img :src="local_server + '/file/2.JPG'" alt="" :class="{ selected: imgList[2] }" />
       </div>
       <div
         class="layout__images__box"
-        @click="imgList[3] = img.update('http://127.0.0.1:8000/file/3.JPG')"
+        @click="imgList[3] = img.update(local_server + '/file/3.JPG')"
       >
-        <img src="http://127.0.0.1:8000/file/3.JPG" alt="" :class="{ selected: imgList[3] }" />
+        <img :src="local_server + '/file/3.JPG'" alt="" :class="{ selected: imgList[3] }" />
       </div>
       <div
         class="layout__images__box"
-        @click="imgList[4] = img.update('http://127.0.0.1:8000/file/4.JPG')"
+        @click="imgList[4] = img.update(local_server + '/file/4.JPG')"
       >
-        <img src="http://127.0.0.1:8000/file/4.JPG" alt="" :class="{ selected: imgList[4] }" />
+        <img :src="local_server + '/file/4.JPG'" alt="" :class="{ selected: imgList[4] }" />
       </div>
       <div
         class="layout__images__box"
-        @click="imgList[5] = img.update('http://127.0.0.1:8000/file/5.JPG')"
+        @click="imgList[5] = img.update(local_server + '/file/5.JPG')"
       >
-        <img src="http://127.0.0.1:8000/file/5.JPG" alt="" :class="{ selected: imgList[5] }" />
+        <img :src="local_server + '/file/5.JPG'" alt="" :class="{ selected: imgList[5] }" />
       </div>
       <div
         class="layout__images__box"
-        @click="imgList[6] = img.update('http://127.0.0.1:8000/file/6.JPG')"
+        @click="imgList[6] = img.update(local_server + '/file/6.JPG')"
       >
-        <img src="http://127.0.0.1:8000/file/6.JPG" alt="" :class="{ selected: imgList[6] }" />
+        <img :src="local_server + '/file/6.JPG'" alt="" :class="{ selected: imgList[6] }" />
       </div>
       <div
         class="layout__images__box"
-        @click="imgList[7] = img.update('http://127.0.0.1:8000/file/7.JPG')"
+        @click="imgList[7] = img.update(local_server + '/file/7.JPG')"
       >
-        <img src="http://127.0.0.1:8000/file/7.JPG" alt="" :class="{ selected: imgList[7] }" />
+        <img :src="local_server + '/file/7.JPG'" alt="" :class="{ selected: imgList[7] }" />
       </div>
 
       <div class="layout__images__box" id="count">

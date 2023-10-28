@@ -43,6 +43,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@vue/eslint-config-typescript", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:11.0.3"],\
             ["@vue/tsconfig", "npm:0.4.0"],\
             ["axios", "npm:1.5.1"],\
+            ["dotenv", "npm:16.3.1"],\
             ["eslint", "npm:8.48.0"],\
             ["eslint-plugin-vue", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:9.17.0"],\
             ["html2canvas", "npm:1.4.1"],\
@@ -1981,6 +1982,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@vue/eslint-config-typescript", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:11.0.3"],\
             ["@vue/tsconfig", "npm:0.4.0"],\
             ["axios", "npm:1.5.1"],\
+            ["dotenv", "npm:16.3.1"],\
             ["eslint", "npm:8.48.0"],\
             ["eslint-plugin-vue", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:9.17.0"],\
             ["html2canvas", "npm:1.4.1"],\
@@ -2437,6 +2439,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["doctrine", "npm:3.0.0"],\
             ["esutils", "npm:2.0.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["dotenv", [\
+        ["npm:16.3.1", {\
+          "packageLocation": "./.yarn/cache/dotenv-npm-16.3.1-e6d380a398-15d75e7279.zip/node_modules/dotenv/",\
+          "packageDependencies": [\
+            ["dotenv", "npm:16.3.1"]\
           ],\
           "linkType": "HARD"\
         }]\

@@ -33,8 +33,9 @@ import Layout3x2 from '@/components/Layout-Frame3x2.vue'
 import Layout4 from '@/components/Layout-Frame4.vue'
 import PhotoList from '@/components/PhotoList.vue'
 import navbar from '@/components/navigation-view.vue'
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { usePhotosetStore } from '@/stores/photoset'
+import axios from 'axios'
 
 const img = usePhotosetStore()
 // const FrameHeight = ref(600)
@@ -48,6 +49,10 @@ const borderwidth = ref('10px')
 const imgHeight = ref('190px')
 
 const disabled = computed(() => img.selected == img.imgLength[img.frame])
+
+onMounted(() =>{
+    axios.get('http://127.0.0.1:8008/imgprocess/grayscale')
+})
 
 // You can also define computed properties here if needed
 // const layoutHeight = computed(() => `${(FrameHeight.value * 2 / 3)}px`)

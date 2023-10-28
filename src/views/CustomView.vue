@@ -8,27 +8,27 @@ import { usePhotosetStore } from '@/stores/photoset'
 import axios from 'axios';
 
 const img = usePhotosetStore()
-
+const local_server = "http://127.0.0.1:8008"
 const layoutRef = ref(null);
 
 const qr_link = ref("");
 
 const showDialog = ref(false); // 다이얼로그를 보여줄지 결정하는 ref
 
-
+//location.href ="/"
 const downloadImg = async () => {
   showDialog.value = true;
   if (layoutRef.value) {
     const startTime = performance.now();
     const canvas = await html2canvas.default(layoutRef.value, { scale: 6, useCORS: true });
     
-    const res = await axios.get('http://127.0.0.1:8000/qr')
+    const res = await axios.get(local_server + '/qr')
     
     axios.post('http://127.0.0.1:8080/save', { image_addr: res.data.qr,image_data: canvas.toDataURL()  });
     qr_link.value = "https://2777-211-214-106-154.ngrok-free.app/" + res.data.qr
     await nextTick();
     const newCanvas = await html2canvas.default(layoutRef.value, { scale: 3, useCORS: true }); //300dpi scale*100 == dpi
-    axios.post('http://127.0.0.1:8000/save', { image_data: newCanvas.toDataURL()  });
+    axios.post(local_server+ '/save', { image_data: newCanvas.toDataURL()  });
     const endTime = performance.now();
 const elapsedTime = endTime - startTime;
 console.log(`실행 시간: ${elapsedTime.toFixed(2)}ms`);
