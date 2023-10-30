@@ -4,6 +4,7 @@ import * as html2canvas from 'html2canvas';
 import Layout6 from '@/components/Layout-Frame6.vue';
 import card from '@/components/Card-View.vue';
 import Layout3x2 from '@/components/Layout-Frame3x2.vue';
+import LayoutFrame4x1 from '@/components/Layout-Frame4x1.vue';
 
 const layoutRef = ref(null);
 
@@ -35,7 +36,7 @@ const increament = () => {
   <button type="button" @click="downloadImg">download</button>
   
   <button type="button" @click="increament">++</button>
- 
+  <LayoutFrame4x1 qr="asfdsadfsdfsdaa"></LayoutFrame4x1>
   <font-awesome-icon :icon="['fas', 'caret-right']" />
   <v-icon icon="home" />
 </template>

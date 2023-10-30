@@ -1,0 +1,112 @@
+<!-- <script lang="ts">
+export default {
+  props: {
+    layoutWidth: String,
+    layoutHeight: String, // 전달받을 CSS 변수의 prop 정의
+    qr: String,
+    borderwidth: String
+  }
+}
+</script> -->
+<script setup lang="ts">
+// import cv from 'opencv.js'
+import { ref } from 'vue'
+import { usePhotosetStore } from '@/stores/photoset'
+import QrcodeVue, { Level, RenderAs } from 'qrcode.vue'
+
+
+const value = ref('qrcode')
+const level = ref<Level>('M')
+const renderAs = ref<RenderAs>('svg')
+
+const img = usePhotosetStore()
+const props = defineProps({
+  qr: String,
+})
+</script>
+
+<template>
+  <div class="layout" :style="{backgroundColor:img.backgroundColor }">
+    
+    <div class="img_box">
+        <img :src="img.imgSrc[0]" alt=""  v-show="!img.grayScale"/>
+        <img :src="img.imgSrc[0]+'/grayscale'" alt=""  v-show="img.grayScale"/>
+        <!-- v-show로 그레이 스케일 뷰 갈아끼기
+         -->
+    </div>
+    <div class="img_box">
+        <img :src="img.imgSrc[1]" alt=""  v-show="!img.grayScale"/>
+        <img :src="img.imgSrc[1]+'/grayscale'" alt=""  v-show="img.grayScale"/>
+    </div>
+    <div class="img_box">
+        <img :src="img.imgSrc[2]" alt=""  v-show="!img.grayScale"/>
+        <img :src="img.imgSrc[2]+'/grayscale'" alt=""  v-show="img.grayScale"/>
+    </div>
+    <div class="img_box">
+        <img :src="img.imgSrc[3]" alt=""  v-show="!img.grayScale"/>
+        <img :src="img.imgSrc[3]+'/grayscale'" alt=""  v-show="img.grayScale"/>
+    </div>
+    <div class="footer">
+        <h2>Hello World</h2>
+        <qrcode-vue value="qrasf" :level="level" :render-as="renderAs" :margin="1" v-show="qr" class="qr"/>
+    </div>
+  </div>
+  
+</template>
+
+<style lang="scss" scoped>
+
+.layout {
+    width: 200px;
+    height: 600px;
+    // gap: 5px;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    margin: 5px;
+    .img_box{
+        width: 180px;
+        height: 135px;
+        margin-top: 5px;
+        background-color: aliceblue;
+    }
+    .img_box:first-child{
+        margin-top: 0px;
+    }
+    .img_box:last-child{
+        margin-top: 0px;
+    }
+    .footer {
+        height: 30px;
+        // padding-top: 2px;
+        // padding-right: 3px;
+        color: white;
+        // display: flex;
+        // align-items: center;
+        // align-content: center;
+        h2{
+            height: 100%;
+            display: inline;
+        }
+    }
+    .qr{
+        margin-top: 5px;
+        width: 25px;
+        height: 25px;
+        float: right;
+        
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+</style>

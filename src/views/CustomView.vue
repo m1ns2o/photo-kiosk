@@ -24,15 +24,23 @@ const downloadImg = async () => {
     
     const res = await axios.get(local_server + '/qr')
     
-    axios.post('http://127.0.0.1:8080/save', { image_addr: res.data.qr,image_data: canvas.toDataURL()  });
-    qr_link.value = "https://2777-211-214-106-154.ngrok-free.app/" + res.data.qr
+    const res_filename = await axios.post('http://127.0.0.1:8080/save', { image_addr: res.data.qr,image_data: canvas.toDataURL()  });
+    const file_name = res_filename.data.file_name
+    // console.log(res_id.data);
+    qr_link.value = "https://6c86-2a09-bac5-4774-174b-00-252-1b.ngrok-free.app/" + res.data.qr
     await nextTick();
     const newCanvas = await html2canvas.default(layoutRef.value, { scale: 3, useCORS: true }); //300dpi scale*100 == dpi
     axios.post(local_server+ '/save', { image_data: newCanvas.toDataURL()  });
+    
     const endTime = performance.now();
-const elapsedTime = endTime - startTime;
-console.log(`실행 시간: ${elapsedTime.toFixed(2)}ms`);
-showDialog.value = false;
+    const elapsedTime = endTime - startTime;
+    console.log(`실행 시간: ${elapsedTime.toFixed(2)}ms`);
+    console.log(local_server+"/mp4/"+file_name)
+    await axios.get(local_server+"/mp4/"+file_name)
+    
+    // console.log("에러" + error.response.data)
+    showDialog.value = false;
+
     //counter store로 출력해야하는 장수 전송하기 + 레이아웃 6x2 6x4도 데이터 전송하기
   }
 };
