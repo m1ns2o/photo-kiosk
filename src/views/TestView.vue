@@ -5,7 +5,7 @@ import Layout6 from '@/components/Layout-Frame6.vue';
 import card from '@/components/Card-View.vue';
 import Layout3x2 from '@/components/Layout-Frame3x2.vue';
 import LayoutFrame4x1 from '@/components/Layout-Frame4x1.vue';
-
+import LayoutFrame2x2 from '@/components/Layout-Frame2x2.vue';
 const layoutRef = ref(null);
 
 const qr_link = ref("");
@@ -39,6 +39,7 @@ const increament = () => {
   <LayoutFrame4x1 qr="asfdsadfsdfsdaa"></LayoutFrame4x1>
   <font-awesome-icon :icon="['fas', 'caret-right']" />
   <v-icon icon="home" />
+  <LayoutFrame2x2 qr="asfdsadfsdfsdaa"></LayoutFrame2x2>
 </template>
 
 <style lang="scss" scoped>
