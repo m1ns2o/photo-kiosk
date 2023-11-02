@@ -1,45 +1,12 @@
-<!-- <script lang="ts">
-  
-import Layout6 from '@/components/Layout-Frame6.vue'
-import card from '@/components/Card-View.vue'
-import navbar from '@/components/navigation-view.vue'
-import router from '@/router'
-import { useCounterStore } from '@/stores/counter'
-
-export default {
-  components: {
-    Layout6,
-    card,
-    navbar
-  },
-  setup() {
-    const counter = useCounterStore()
-  },
-  data() {
-    return {
-      layoutWidth: '160px',
-      layoutHeight: '240px',
-      qr: '',
-      borderwidth: '5px'
-    }
-  },
-  methods: {
-    selectItem(index: number): void {
-      router.push('count')
-      counter.index = index
-    }
-  }
-}
-</script> -->
 <script setup lang="ts">
 import Layout6 from '@/components/Layout-Frame6.vue'
 import Card from '@/components/Card-View.vue'
 import Navbar from '@/components/navigation-view.vue'
-import { useCounterStore } from '@/stores/counter'
+import { usePhotosetStore } from '@/stores/photoset'
 import { ref } from 'vue'
 import router from '@/router'
 
-const counter = useCounterStore()
+const photoset = usePhotosetStore()
 
 const layoutWidth = ref('160px')
 const layoutHeight = ref('240px')
@@ -48,11 +15,20 @@ const borderWidth = ref('5px')
 
 const selectItem = (index: number) => {
   router.push('count')
-  counter.index = index
+  photoset.index = index
 }
 </script>
 <template>
   <div class="main">
+    <card @click="selectItem(0)">
+      <Layout6
+        :layoutWidth="layoutWidth"
+        :layoutHeight="layoutHeight"
+        :qr="qr"
+        :borderwidth="borderWidth"
+      />
+      <h2>₩5000</h2>
+    </card>
     <card @click="selectItem(1)">
       <Layout6
         :layoutWidth="layoutWidth"
@@ -72,15 +48,6 @@ const selectItem = (index: number) => {
       <h2>₩5000</h2>
     </card>
     <card @click="selectItem(3)">
-      <Layout6
-        :layoutWidth="layoutWidth"
-        :layoutHeight="layoutHeight"
-        :qr="qr"
-        :borderwidth="borderWidth"
-      />
-      <h2>₩5000</h2>
-    </card>
-    <card @click="selectItem(4)">
       <Layout6
         :layoutWidth="layoutWidth"
         :layoutHeight="layoutHeight"

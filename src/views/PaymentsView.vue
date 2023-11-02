@@ -16,11 +16,15 @@ const paymentsAsync = () => {
   router.push('/preshot')
 };
 
+const testpage = () => {
+  router.push('/pinia')
+}
+
 
 </script>
 <template>
   <div class="main">
-    <div class="card">
+    <div class="card" @click="testpage">
       <font-awesome-icon icon="fa-solid fa-credit-card" size="2xl" style="color: #000000" />
       <!-- <p>카드 결제</p> -->
     </div>
