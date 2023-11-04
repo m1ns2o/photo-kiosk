@@ -17,7 +17,11 @@ const img = "http://127.0.0.1:8008/static/4x1.jpg"
 
 const selectItem = (index: number) => {
   router.push('count')
-  photoset.index = index
+  // photoset.frame = await index
+  // console.log(photoset.imgLength[photoset.frame])
+  photoset.resetArray(index)
+  console.log("photoset.frame : "+photoset.frame)
+  // console.log(photoset.imgSrc.value)
 }
 </script>
 <template>

@@ -11,29 +11,33 @@ const api: string = 'http://127.0.0.1:8000/file/'
 // const src5 = api+"5.JPG"
 
 export const usePhotosetStore = defineStore('photoset', () => {
-  const frame = ref(2)
+  let frame = ref(2)
   let index = 0
   const imgLength = <number[]>[4, 4, 6, 6]
   const backgroundColor = ref("#303030")
   const grayScale = ref(false)
   // const imgSrc = ref<string[]>([])
 
-  const initialArray = Array(imgLength[frame.value]).fill('')
-  const imgSrc = ref<string[]>(initialArray)
+  // let initialArray = Array(imgLength[frame]).fill('')
+  // let initialArray = []
+  const imgSrc = ref<string[]>([])
 
   const selected = computed(
     () => imgLength[frame.value] - imgSrc.value.filter((value) => value == '').length
   )
-  function update(src: string): boolean {
-    // for (let i = 0; i <= imgLength[index]; i++) {
-    //   if (imgSrc.value[i] == ''){
-    //     index = i;
-    //     break;
-    //   }
-    // }
 
+  const resetArray = (i : number) => {
+    frame.value = i
+    imgSrc.value = Array(imgLength[frame.value]).fill('');
+    console.log(frame.value);
+
+  }
+
+  function update(src: string): boolean {
     console.log(imgSrc.value)
     index = imgSrc.value.indexOf(src)
+    console.log(index)
+    console.log("Before update - imgSrc:", JSON.stringify(imgSrc.value));
     if (index != -1) {
       //이미지 있을 시 삭제
       console.log('0번')
@@ -48,12 +52,6 @@ export const usePhotosetStore = defineStore('photoset', () => {
         imgSrc.value[index] = src // 빈자리 있음 -> 빈자리에 대입 imgSrc.value.length !=-1
         return true
       }
-      // else if (index == -1 && imgSrc.value.length < imgLength[frame.value]) {
-      //   //앞배열에 빈자리 없음 & 뒷자리 있음 -> 배열 끝에 push
-      //   console.log('2번')
-      //   imgSrc.value.push(src)
-      //   return true
-      // }
       else {
         console.log('3번')
         //빈자리 없음 & 배열자리 없음 index == -1 && imgSrc.value.length > imgLength
@@ -61,7 +59,7 @@ export const usePhotosetStore = defineStore('photoset', () => {
       }
     }
   }
-  return { imgSrc, frame, imgLength, update, selected, backgroundColor, grayScale };
+  return { imgSrc, frame, imgLength, update, selected, backgroundColor, grayScale, resetArray };
 })
 
 /*

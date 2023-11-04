@@ -6,6 +6,7 @@ import * as html2canvas from 'html2canvas';
 import { ref, nextTick } from 'vue'
 import { usePhotosetStore } from '@/stores/photoset'
 import axios from 'axios';
+import Layoutswitch from '@/components/Layout-switch.vue'
 
 const img = usePhotosetStore()
 const local_server = "http://127.0.0.1:8008"

@@ -17,7 +17,7 @@ const paymentsAsync = () => {
 };
 
 const testpage = () => {
-  router.push('/pinia')
+  router.push('/photo')
 }
 
 

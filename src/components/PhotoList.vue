@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { usePhotosetStore } from '@/stores/photoset'
 
 const img = usePhotosetStore()
@@ -9,6 +9,12 @@ const local_server:string = "http://127.0.0.1:8008"
 // const selected= ()=>{
 
 // }
+
+
+onMounted(() =>{
+    console.log(img.imgLength[img.frame])
+})
+
 const imgList = ref<boolean[]>([false, false, false, false, false, false, false, false])
 </script>
 
@@ -116,7 +122,7 @@ const imgList = ref<boolean[]>([false, false, false, false, false, false, false,
         position: relative;
         width: 100%;
         height: 100%;
-        background-color: aqua;
+        // background-color: aqua;
       }
       img {
         max-width: 100%;

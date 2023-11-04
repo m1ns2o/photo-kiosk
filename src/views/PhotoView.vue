@@ -36,22 +36,24 @@ import navbar from '@/components/navigation-view.vue'
 import { ref, computed, onMounted } from 'vue'
 import { usePhotosetStore } from '@/stores/photoset'
 import axios from 'axios'
+import Layoutswitch from '@/components/Layout-switch.vue'
 
 const img = usePhotosetStore()
 // const FrameHeight = ref(600)
 // const layoutHeight = computed(() => `${FrameHeight.value}px`)
 
-const qr = ref('qwre')
-const layoutWidth = ref('4in')
+// const qr = ref('qwre')
+// const layoutWidth = ref('4in')
 
-const layoutHeight = ref('6in')
-const borderwidth = ref('10px')
-const imgHeight = ref('190px')
+// const layoutHeight = ref('6in')
+// const borderwidth = ref('10px')
+// const imgHeight = ref('190px')
 
 const disabled = computed(() => img.selected == img.imgLength[img.frame])
 
 onMounted(() =>{
     axios.get('http://127.0.0.1:8008/imgprocess/grayscale')
+    console.log(img.imgLength[img.frame])
 })
 
 // You can also define computed properties here if needed
@@ -59,8 +61,9 @@ onMounted(() =>{
 </script>
 <template>
   <div class="main">
-    <Layout3x2></Layout3x2>
-    <PhotoList :imgHeight="imgHeight" />
+    <!-- <Layout3x2></Layout3x2> -->
+    <Layoutswitch></Layoutswitch>
+    <PhotoList :imgHeight="'190px'" />
   </div>
   <navbar :show_back="false" link="/custom" :disabled="!disabled" />
 </template>
