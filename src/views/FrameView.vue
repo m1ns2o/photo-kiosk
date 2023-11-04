@@ -13,6 +13,8 @@ const layoutHeight = ref('240px')
 const qr = ref('')
 const borderWidth = ref('5px')
 
+const img = "http://127.0.0.1:8008/static/4x1.jpg"
+
 const selectItem = (index: number) => {
   router.push('count')
   photoset.index = index
@@ -20,32 +22,11 @@ const selectItem = (index: number) => {
 </script>
 <template>
   <div class="main">
-    <card @click="selectItem(0)">
-      <Layout6
-        :layoutWidth="layoutWidth"
-        :layoutHeight="layoutHeight"
-        :qr="qr"
-        :borderwidth="borderWidth"
-      />
-      <h2>₩5000</h2>
+    <card @click="selectItem(0)" :img="'http://127.0.0.1:8008/static/4x1.jpg'">
     </card>
-    <card @click="selectItem(1)">
-      <Layout6
-        :layoutWidth="layoutWidth"
-        :layoutHeight="layoutHeight"
-        :qr="qr"
-        :borderwidth="borderWidth"
-      />
-      <h2>₩5000</h2>
+    <card @click="selectItem(1)" :img="'http://127.0.0.1:8008/static/2x2.jpg'">
     </card>
-    <card @click="selectItem(2)">
-      <Layout6
-        :layoutWidth="layoutWidth"
-        :layoutHeight="layoutHeight"
-        :qr="qr"
-        :borderwidth="borderWidth"
-      />
-      <h2>₩5000</h2>
+    <card @click="selectItem(2)" :img="'http://127.0.0.1:8008/static/3x2.jpg'">
     </card>
     <card @click="selectItem(3)">
       <Layout6

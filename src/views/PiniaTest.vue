@@ -30,7 +30,7 @@ const downloadImg = async () => {
     // console.log(res_id.data);
     qr_link.value = "https://6c86-2a09-bac5-4774-174b-00-252-1b.ngrok-free.app/" + res.data.qr
     await nextTick();
-    const newCanvas = await html2canvas.default(layoutRef.value, { scale: 3, useCORS: true }); //300dpi scale*100 == dpi
+    const newCanvas = await html2canvas.default(layoutRef.value, { scale: 1, useCORS: true }); //300dpi scale*100 == dpi
     axios.post(local_server+ '/save', { image_data: newCanvas.toDataURL()  });
     
     const endTime = performance.now();
@@ -46,7 +46,7 @@ const downloadImg = async () => {
   }
 };
 
-// 아래의 increament 함수가 정의되지 않았기 때문에 일단 주석 처리하겠습니다.
+
 
 </script>
 <template>
@@ -102,6 +102,9 @@ const downloadImg = async () => {
   gap: 30px;
   height: 90%;
   .img{
+    display: flex;
+  justify-content: center;
+  align-items: center;
     width: 400px;
   }
 }

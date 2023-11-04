@@ -1,29 +1,17 @@
-<script lang="ts">
-// import Layout6 from '@/components/Layout-Frame6.vue'
+<script setup lang="ts">
 
-// export default{
-//   components: {
-//     Layout6
-//   },
-//   data() {
-//     return {
-//       layoutWidth: "160px",
-//       layoutHeight: "240px",
-//       footer : "none",
-//       borderwidth: "5px",
-//     };
-//   },
-// }
-// //   components: {
-//     Layout6
-//   }
+const props = defineProps({
+  img: String,
+})
 </script>
 <template>
   <div class="main">
     <div class="shadow">
       <div class="card">
         <div class="content">
-          <slot></slot>
+          <img class="layout" :src="img" alt="">
+          
+          <h2>₩5000</h2>
         </div>
         <div class="edge"></div>
       </div>
@@ -41,6 +29,7 @@ h2 {
   border-radius: 20px;
 }
 
+
 .card {
   width: 300px;
   height: 400px;
@@ -54,25 +43,32 @@ h2 {
   // justify-content: space-between;
   align-items: flex-end;
   /* drop-shadow: 23px 50px 8px 0px rgba(0, 0, 0, 0.3); */
+  .content {
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    font-size: 18px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 50px;
+    // padding-top: 30px;
+    padding-bottom: 14px;
+    // margin-bottom: 0px;
+    .layout{
+      margin-top: 5px;
+      width: 180px;
+      height: auto;
+    }
+  }
+ 
 }
 
-.content {
-  width: 100%;
-  height: 100%;
-  padding: 50px;
-  font-size: 18px;
-  text-align: center;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-
-  gap: 50px;
-  // padding-top: 40px;
-  padding-bottom: 14px;
-  // margin-bottom: 0px;
-}
 .shadow {
   filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.1));
 }

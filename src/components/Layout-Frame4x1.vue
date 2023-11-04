@@ -29,7 +29,7 @@ const props = defineProps({
   <div class="layout" :style="{backgroundColor:img.backgroundColor }">
     
     <div class="img_box">
-        <img :src="img.imgSrc[0]" alt=""  v-show="!img.grayScale"/>
+        <img :src="img.imgSrc[0]" alt="" v-show="!img.grayScale"/>
         <img :src="img.imgSrc[0]+'/grayscale'" alt=""  v-show="img.grayScale"/>
         <!-- v-show로 그레이 스케일 뷰 갈아끼기
          -->
@@ -47,7 +47,7 @@ const props = defineProps({
         <img :src="img.imgSrc[3]+'/grayscale'" alt=""  v-show="img.grayScale"/>
     </div>
     <div class="footer">
-        <h2>Hello World</h2>
+        <h2></h2>
         <qrcode-vue value="qrasf" :level="level" :render-as="renderAs" :margin="1" v-show="qr" class="qr"/>
     </div>
   </div>
@@ -63,7 +63,6 @@ const props = defineProps({
     padding: 10px;
     display: grid;
     grid-template-rows: repeat(4, 1fr);
-    margin: 5px;
     .img_box{
         width: 180px;
         height: 135px;

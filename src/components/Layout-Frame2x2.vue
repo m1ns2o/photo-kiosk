@@ -36,7 +36,7 @@ const props = defineProps({
 <template>
   <div class="layout" :style="{backgroundColor:img.backgroundColor }">
     <div class="head">
-        hello World
+        
     </div>
     <div class="img_box">
         <img :src="img.imgSrc[0]" alt=""  v-show="!img.grayScale"/>
