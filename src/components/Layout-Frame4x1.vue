@@ -91,13 +91,14 @@ const img = usePhotosetStore()
     width: 200px;
     height: 600px;
     // gap: 5px;
-    padding: 10px;
+    padding: 10px 10.24px 5px 10.24px;
+    // padding-top: 10px;
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     .img_box{
-        width: 180px;
-        height: 135px;
-        margin-top: 5px;
+        width: 179.52px;
+        height: 136px;
+        margin-top: 4px;
         background-color: aliceblue;
     }
     .img_box:first-child{
@@ -108,7 +109,7 @@ const img = usePhotosetStore()
     }
     .footer {
         padding: 1px;
-        height: 24px;
+        height: 25px;
         // margin-bottom: 10px;
         // padding-bottom: 5px;
         // padding-right: 3px;
@@ -118,14 +119,14 @@ const img = usePhotosetStore()
         // align-content: center;
         h2{
             font-size: 20px;
-            height: 24px;
+            height: 25px;
             display: inline;
         }
     }
     .qr{
         // margin-top: 1px;
-        width: 23px;
-        height: 23px;
+        width: 27px;
+        height: 27px;
         float: right;
         
         img {
