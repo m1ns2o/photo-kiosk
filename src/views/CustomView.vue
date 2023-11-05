@@ -11,14 +11,16 @@ import Layoutswitch from '@/components/Layout-switch.vue'
 const img = usePhotosetStore()
 const local_server = "http://127.0.0.1:8008"
 const layoutRef = ref(null);
-
 const showDialog = ref(false); // 다이얼로그를 보여줄지 결정하는 ref
 
 //location.href ="/"
 const downloadImg = async () => {
   showDialog.value = true;
+  img.show_half_frame = true;
+  console.log("상태변경"+ img.show_half_frame.value)
   if (layoutRef.value) {
     const startTime = performance.now();
+    await nextTick();
     const canvas = await html2canvas.default(layoutRef.value, { scale: 6, useCORS: true });
     
     const res = await axios.get(local_server + '/qr')

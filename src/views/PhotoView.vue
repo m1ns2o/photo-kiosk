@@ -1,33 +1,3 @@
-<!-- <script lang="ts">
-import Layout6 from '@/components/Layout-Frame6.vue'
-import PhotoList from '@/components/PhotoList.vue'
-export default {
-  components: {
-    Layout6,
-    PhotoList
-  },
-
-  data() {
-    return {
-      FrameHeight: 600,
-      qr: 'qwre',
-      layoutWidth: '400px',
-      layoutHeight: '600px',
-      borderwidth: '10px',
-      // imgWidth: '300px',
-      imgHeight: '190px'
-    }
-  },
-  computed: {
-    // layoutWidth(): string {
-    //   return (((this.FrameHeight * 2) / 3) as string) + 'px'
-    // },
-    // layoutHeight(): string {
-    //   return (this.FrameHeight as string) + 'px'
-    // }
-  }
-}
-</script> -->
 <script setup lang="ts">
 import Layout3x2 from '@/components/Layout-Frame3x2.vue'
 import Layout4 from '@/components/Layout-Frame4.vue'

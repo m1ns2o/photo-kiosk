@@ -13,7 +13,7 @@ onMounted(() =>{
 </script>
 
 <template>
-
+    <!-- <LayoutFrame4x1 v-show="photoset.frame == 0 && show_half_frame"></LayoutFrame4x1> -->
     <LayoutFrame4x1 v-if="photoset.frame == 0"></LayoutFrame4x1>
     <LayoutFrame2x2 v-else-if="photoset.frame == 1"></LayoutFrame2x2>
     <LayoutFrame3x2 v-else-if="photoset.frame == 2"></LayoutFrame3x2>

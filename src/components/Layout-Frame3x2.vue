@@ -10,7 +10,7 @@ export default {
 </script> -->
 <script setup lang="ts">
 // import cv from 'opencv.js'
-import { ref, inject } from 'vue'
+import { ref } from 'vue'
 import { usePhotosetStore } from '@/stores/photoset'
 import QrcodeVue, { Level, RenderAs } from 'qrcode.vue'
 

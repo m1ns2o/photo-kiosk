@@ -16,7 +16,7 @@ import QrcodeVue, { Level, RenderAs } from 'qrcode.vue'
 
 
 const value = ref('qrcode')
-const level = ref<Level>('M')
+const level = ref<Level>('M') 
 const renderAs = ref<RenderAs>('svg')
 
 const img = usePhotosetStore()
@@ -26,6 +26,31 @@ const img = usePhotosetStore()
 </script>
 
 <template>
+    <div class="main_frame">
+        <div v-show="img.show_half_frame" class="layout" :style="{backgroundColor:img.backgroundColor }">
+        <div class="img_box">
+            <img :src="img.imgSrc[0]" alt="" v-show="!img.grayScale"/>
+            <img :src="img.imgSrc[0]+'/grayscale'" alt=""  v-show="img.grayScale"/>
+            <!-- v-show로 그레이 스케일 뷰 갈아끼기
+            -->
+        </div>
+        <div class="img_box">
+            <img :src="img.imgSrc[1]" alt=""  v-show="!img.grayScale"/>
+            <img :src="img.imgSrc[1]+'/grayscale'" alt=""  v-show="img.grayScale"/>
+        </div>
+        <div class="img_box">
+            <img :src="img.imgSrc[2]" alt=""  v-show="!img.grayScale"/>
+            <img :src="img.imgSrc[2]+'/grayscale'" alt=""  v-show="img.grayScale"/>
+        </div>
+        <div class="img_box">
+            <img :src="img.imgSrc[3]" alt=""  v-show="!img.grayScale"/>
+            <img :src="img.imgSrc[3]+'/grayscale'" alt=""  v-show="img.grayScale"/>
+        </div>
+        <div class="footer">
+            <h2></h2>
+            <!-- <qrcode-vue value="img.qr" :level="level" :render-as="renderAs" :margin="1" v-show="img.qr" class="qr"/> -->
+        </div>
+  </div>
   <div class="layout" :style="{backgroundColor:img.backgroundColor }">
     
     <div class="img_box">
@@ -47,14 +72,20 @@ const img = usePhotosetStore()
         <img :src="img.imgSrc[3]+'/grayscale'" alt=""  v-show="img.grayScale"/>
     </div>
     <div class="footer">
-        <h2></h2>
-        <qrcode-vue value="img.qr" :level="level" :render-as="renderAs" :margin="1" v-show="img.qr" class="qr"/>
+        <h2>Hello World</h2>
+        <qrcode-vue :value="img.qr" :level="level" :render-as="renderAs" :margin="1" v-show="img.qr" class="qr"/>
     </div>
   </div>
+    </div>
   
 </template>
 
 <style lang="scss" scoped>
+.main_frame{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
 
 .layout {
     width: 200px;
@@ -76,22 +107,25 @@ const img = usePhotosetStore()
         margin-top: 0px;
     }
     .footer {
-        height: 30px;
-        // padding-top: 2px;
+        padding: 1px;
+        height: 24px;
+        // margin-bottom: 10px;
+        // padding-bottom: 5px;
         // padding-right: 3px;
         color: white;
         // display: flex;
         // align-items: center;
         // align-content: center;
         h2{
-            height: 100%;
+            font-size: 20px;
+            height: 24px;
             display: inline;
         }
     }
     .qr{
-        margin-top: 5px;
-        width: 25px;
-        height: 25px;
+        // margin-top: 1px;
+        width: 23px;
+        height: 23px;
         float: right;
         
         img {

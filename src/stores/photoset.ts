@@ -11,7 +11,8 @@ const api: string = 'http://127.0.0.1:8000/file/'
 // const src5 = api+"5.JPG"
 
 export const usePhotosetStore = defineStore('photoset', () => {
-  let frame = ref(2)
+  const frame = ref(2)
+  const show_half_frame = ref(false)
   let index = 0
   const imgLength = <number[]>[4, 4, 6, 6]
   const backgroundColor = ref("#303030")
