@@ -28,9 +28,9 @@ const img = usePhotosetStore()
 //     src.delete()
 //     dst.delete()
 //   }
-const props = defineProps({
-  qr: String,
-})
+// const props = defineProps({
+//   qr: String,
+// })
 </script>
 
 <template>
@@ -58,7 +58,7 @@ const props = defineProps({
     </div>
     
     <div class="footer">
-        <qrcode-vue :value="qr" :level="level" :render-as="renderAs" :margin="1" v-show="qr" class="qr"/>
+        <qrcode-vue :value="img.qr" :level="level" :render-as="renderAs" :margin="1" v-show="img.qr" class="qr"/>
     </div>
   </div>
   

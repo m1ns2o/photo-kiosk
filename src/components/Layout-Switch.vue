@@ -23,15 +23,14 @@ onMounted(() =>{
 
   
 <style lang="scss" scoped>
-// .main{
-//   display: flex;
-//   flex-direction: column;
-//   flex-wrap: wrap;
-//   align-items: center;
-//   align-content: center;
-      
+
+
+// html,
+// body {
+//   height: 100%;
+//   width: 100%;
+//   padding: 0;
+//   margin: 0;
 // }
-
-
 
 </style>

@@ -20,9 +20,9 @@ const level = ref<Level>('M')
 const renderAs = ref<RenderAs>('svg')
 
 const img = usePhotosetStore()
-const props = defineProps({
-  qr: String,
-})
+// const props = defineProps({
+//   qr: String,
+// })
 </script>
 
 <template>
@@ -48,7 +48,7 @@ const props = defineProps({
     </div>
     <div class="footer">
         <h2></h2>
-        <qrcode-vue value="qrasf" :level="level" :render-as="renderAs" :margin="1" v-show="qr" class="qr"/>
+        <qrcode-vue value="img.qr" :level="level" :render-as="renderAs" :margin="1" v-show="img.qr" class="qr"/>
     </div>
   </div>
   

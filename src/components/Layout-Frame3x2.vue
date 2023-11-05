@@ -10,7 +10,7 @@ export default {
 </script> -->
 <script setup lang="ts">
 // import cv from 'opencv.js'
-import { ref } from 'vue'
+import { ref, inject } from 'vue'
 import { usePhotosetStore } from '@/stores/photoset'
 import QrcodeVue, { Level, RenderAs } from 'qrcode.vue'
 
@@ -28,9 +28,10 @@ const img = usePhotosetStore()
 //     src.delete()
 //     dst.delete()
 //   }
-const props = defineProps({
-  qr: String,
-})
+// const props = defineProps({
+//   qr: String,
+// })
+// const qr = inject('qr_link')
 </script>
 
 <template>
@@ -65,7 +66,7 @@ const props = defineProps({
         <img :src="img.imgSrc[5]+'/grayscale'" alt=""  v-show="img.grayScale"/>
     </div>
     <div class="footer">
-        <qrcode-vue :value="qr" :level="level" :render-as="renderAs" :margin="1" v-show="qr" class="qr"/>
+        <qrcode-vue :value="img.qr" :level="level" :render-as="renderAs" :margin="1" v-show="img.qr" class="qr"/>
     </div>
   </div>
   
@@ -78,6 +79,7 @@ const props = defineProps({
     width: 400px;
     height: 600px;
     // background-color: black;
+    
     // gap: 5px;
     padding: 5px;
     display: flex;
