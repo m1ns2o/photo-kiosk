@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import Layout6 from '@/components/Layout-Frame6.vue'
 import Card from '@/components/Card-View.vue'
+
 import Navbar from '@/components/navigation-view.vue'
 import { useCounterStore } from '@/stores/counter'
 
 const counter = useCounterStore()
+
 // const link = '/payments'
 </script>
 <template>

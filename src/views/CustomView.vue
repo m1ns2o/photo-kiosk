@@ -3,7 +3,7 @@ import Layout3x2 from '@/components/Layout-Frame3x2.vue'
 // import navbar from '@/components/navigation-view.vue'
 import FrameCustom from '@/components/Frame-Custom.vue'
 import * as html2canvas from 'html2canvas';
-import { ref, nextTick, provide } from 'vue'
+import { ref, nextTick } from 'vue'
 import { usePhotosetStore } from '@/stores/photoset'
 import axios from 'axios';
 import Layoutswitch from '@/components/Layout-switch.vue'
@@ -12,6 +12,10 @@ const img = usePhotosetStore()
 const local_server = "http://127.0.0.1:8008"
 const layoutRef = ref(null);
 const showDialog = ref(false); // 다이얼로그를 보여줄지 결정하는 ref
+
+const increament = ()=>{
+  location.href = "/"
+}
 
 //location.href ="/"
 const downloadImg = async () => {
@@ -27,7 +31,7 @@ const downloadImg = async () => {
     
     const res_filename = await axios.post('http://127.0.0.1:8080/save', { image_addr: res.data.qr,image_data: canvas.toDataURL()  });
     const file_name = res_filename.data.file_name
-    img.qr = "https://6c86-2a09-bac5-4774-174b-00-252-1b.ngrok-free.app/" + res.data.qr
+    img.qr = "https://d688-211-214-106-154.ngrok-free.app/" + res.data.qr
     // provide('qr_link',qr_link)
     await nextTick();
     const newCanvas = await html2canvas.default(layoutRef.value, { scale: 3, useCORS: true }); //300dpi scale*100 == dpi

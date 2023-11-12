@@ -100,6 +100,11 @@ const img = usePhotosetStore()
         height: 136px;
         margin-top: 4px;
         background-color: aliceblue;
+        img{
+            object-fit: cover;
+            margin: 0;
+            padding: 0;
+        }
     }
     .img_box:first-child{
         margin-top: 0px;
@@ -130,6 +135,7 @@ const img = usePhotosetStore()
         float: right;
         
         img {
+            
             max-width: 100%;
             max-height: 100%;
         }

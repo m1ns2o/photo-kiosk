@@ -13,7 +13,6 @@ const layoutHeight = ref('240px')
 const qr = ref('')
 const borderWidth = ref('5px')
 
-const img = "http://127.0.0.1:8008/static/4x1.jpg"
 
 const selectItem = (index: number) => {
   router.push('count')
@@ -21,6 +20,7 @@ const selectItem = (index: number) => {
   // console.log(photoset.imgLength[photoset.frame])
   photoset.resetArray(index)
   console.log("photoset.frame : "+photoset.frame)
+  window.chrome.webview.postMessage("frame_" + photoset.frame);
   // console.log(photoset.imgSrc.value)
 }
 </script>
