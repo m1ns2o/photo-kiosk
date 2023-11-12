@@ -70,7 +70,7 @@ const img = usePhotosetStore()
     width: 400px;
     height: 600px;
     // background-color: black;
-    gap: 5px;
+    gap: 10px;
     // padding: 5px;
     display: flex;
     // align-items: ;
@@ -86,9 +86,16 @@ const img = usePhotosetStore()
     .img_box{
         
         // border: 1px solid black;
-        width: 185px;
+        width: 180px;
         height: 260px;
         background-color: aliceblue;
+        overflow: hidden;
+        img{
+            width: auto; /* 너비는 자동 조정 */
+            height: 100%; /* 이미지의 높이를 컨테이너의 높이와 동일하게 설정 */
+            object-fit: cover; /* 이미지 비율을 유지하면서 컨테이너에 맞춤 */
+            object-position: center;
+        }
     }
     .head{
         padding: 4px;
@@ -102,8 +109,8 @@ const img = usePhotosetStore()
         padding-right: 3px;
     }
     .qr{
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
         // background-color: aquamarine;
         // right: inherit;
         // margin-top: 2px;

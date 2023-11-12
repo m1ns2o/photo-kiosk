@@ -13,6 +13,7 @@ const local_server:string = "http://127.0.0.1:8008"
 
 onMounted(() =>{
     console.log(img.imgLength[img.frame])
+    console.log(img.frame)
 })
 
 const imgList = ref<boolean[]>([false, false, false, false, false, false, false, false])
@@ -24,7 +25,7 @@ const imgList = ref<boolean[]>([false, false, false, false, false, false, false,
     
     <div class="layout__images">
       <div
-        class="layout__images__box"
+        class="layout__images__box" :style="{ width: img.frame == 1 ? '131.537px' : 'auto' }"
         @click="imgList[0] = img.update(local_server + '/file/0.JPG')"
       >
       
@@ -35,43 +36,43 @@ const imgList = ref<boolean[]>([false, false, false, false, false, false, false,
         />
       </div>
       <div
-        class="layout__images__box"
+        class="layout__images__box" :style="{ width: img.frame == 1 ? '131.537px' : 'auto' }"
         @click="imgList[1] = img.update(local_server + '/file/1.JPG')"
       >
         <img :src="local_server + '/file/1.JPG'" alt="" :class="{ selected: imgList[1] }" />
       </div>
       <div
-        class="layout__images__box"
+        class="layout__images__box" :style="{ width: img.frame == 1 ? '131.537px' : 'auto' }"
         @click="imgList[2] = img.update(local_server + '/file/2.JPG')"
       >
         <img :src="local_server + '/file/2.JPG'" alt="" :class="{ selected: imgList[2] }" />
       </div>
       <div
-        class="layout__images__box"
+        class="layout__images__box" :style="{ width: img.frame == 1 ? '131.537px' : 'auto' }"
         @click="imgList[3] = img.update(local_server + '/file/3.JPG')"
       >
         <img :src="local_server + '/file/3.JPG'" alt="" :class="{ selected: imgList[3] }" />
       </div>
       <div
-        class="layout__images__box"
+        class="layout__images__box" :style="{ width: img.frame == 1 ? '131.537px' : 'auto' }"
         @click="imgList[4] = img.update(local_server + '/file/4.JPG')"
       >
         <img :src="local_server + '/file/4.JPG'" alt="" :class="{ selected: imgList[4] }" />
       </div>
       <div
-        class="layout__images__box"
+        class="layout__images__box" :style="{ width: img.frame == 1 ? '131.537px' : 'auto' }"
         @click="imgList[5] = img.update(local_server + '/file/5.JPG')"
       >
         <img :src="local_server + '/file/5.JPG'" alt="" :class="{ selected: imgList[5] }" />
       </div>
       <div
-        class="layout__images__box"
+        class="layout__images__box" :style="{ width: img.frame == 1 ? '131.537px' : 'auto' }"
         @click="imgList[6] = img.update(local_server + '/file/6.JPG')"
       >
         <img :src="local_server + '/file/6.JPG'" alt="" :class="{ selected: imgList[6] }" />
       </div>
       <div
-        class="layout__images__box"
+        class="layout__images__box" :style="{ width: img.frame == 1 ? '131.537px' : 'auto' }"
         @click="imgList[7] = img.update(local_server + '/file/7.JPG')"
       >
         <img :src="local_server + '/file/7.JPG'" alt="" :class="{ selected: imgList[7] }" />
@@ -129,6 +130,12 @@ const imgList = ref<boolean[]>([false, false, false, false, false, false, false,
         max-height: 100%;
         display: block;
         margin: auto;
+        overflow: hidden;
+        // width: auto; 
+        // height: 265px;
+        height: 100%; /* 이미지의 높이를 컨테이너의 높이와 동일하게 설정 */
+        object-fit: cover; /* 이미지 비율을 유지하면서 컨테이너에 맞춤 */
+        object-position: center;
       }
       img.selected {
         -webkit-filter: brightness(0.5);
