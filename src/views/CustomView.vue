@@ -29,13 +29,13 @@ const downloadImg = async () => {
     
     const res = await axios.get(local_server + '/qr')
     
-    const res_filename = await axios.post('http://127.0.0.1:8080/save', { image_addr: res.data.qr,image_data: canvas.toDataURL()  });
+    const res_filename = await axios.post('http://127.0.0.1:8080/save', { image_addr: res.data.qr,image_data: canvas.toDataURL('image/jpeg', 0.9)  });
     const file_name = res_filename.data.file_name
-    img.qr = "https://d688-211-214-106-154.ngrok-free.app/" + res.data.qr
+    img.qr = "https://39dc-2a09-bac1-3f20-b8-00-252-39.ngrok-free.app/" + res.data.qr
     // provide('qr_link',qr_link)
     await nextTick();
     const newCanvas = await html2canvas.default(layoutRef.value, { scale: 3, useCORS: true }); //300dpi scale*100 == dpi
-    axios.post(local_server+ '/save', { image_data: newCanvas.toDataURL()  });
+    axios.post(local_server+ '/save', { image_data: newCanvas.toDataURL('image/jpeg', 0.9)  });
     
     const endTime = performance.now();
     const elapsedTime = endTime - startTime;
