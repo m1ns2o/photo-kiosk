@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import TestView from '../views/TestView.vue'
 import FrameView from '@/views/FrameView.vue'
 import PaymentsView from '@/views/PaymentsView.vue'
 import CountView from '@/views/CountView.vue'
@@ -8,8 +7,6 @@ import PhotoView from '@/views/PhotoView.vue'
 import CustomView from '@/views/CustomView.vue'
 import PreshotView from '@/views/PreshotView.vue'
 import AftershotView from '@/views/AftershotView.vue'
-import PiniaTest from '@/views/PiniaTest.vue'
-import Pinia2View from '@/views/Test2View.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -54,21 +51,7 @@ const router = createRouter({
       name: 'custom',
       component: CustomView
     },
-    {
-      path: '/pinia',
-      name: 'pinia',
-      component: PiniaTest
-    },
-    {
-      path: '/pinia2',
-      name: 'pinia2',
-      component: Pinia2View
-    },
-    {
-      path: '/test',
-      name: 'test',
-      component: TestView
-    }
+    
   ]
 })
 

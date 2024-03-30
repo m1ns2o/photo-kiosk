@@ -32,7 +32,7 @@ const downloadImg = async () => {
     
     const res_filename = await axios.post(external_server+'/save', { image_addr: res.data.qr,image_data: canvas.toDataURL('image/jpeg', 0.9)  });
     const file_name = res_filename.data.file_name
-    img.qr = external_server + res.data.qr
+    img.qr = external_server +"/"+ res.data.qr
     // provide('qr_link',qr_link)
     await nextTick();
     const newCanvas = await html2canvas.default(layoutRef.value, { scale: 3, useCORS: true }); //300dpi scale*100 == dpi

@@ -51,6 +51,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["opencv.js", "npm:1.2.1"],\
             ["pinia", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:2.1.6"],\
             ["prettier", "npm:3.0.3"],\
+            ["qr", "npm:0.2.4"],\
             ["qrcode.vue", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:3.4.1"],\
             ["sass", "npm:1.66.1"],\
             ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"],\
@@ -1944,6 +1945,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["benchmark", [\
+        ["npm:2.1.4", {\
+          "packageLocation": "./.yarn/cache/benchmark-npm-2.1.4-3d024a205e-aa466561d4.zip/node_modules/benchmark/",\
+          "packageDependencies": [\
+            ["benchmark", "npm:2.1.4"],\
+            ["lodash", "npm:4.17.21"],\
+            ["platform", "npm:1.3.6"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["big-integer", [\
         ["npm:1.6.51", {\
           "packageLocation": "./.yarn/cache/big-integer-npm-1.6.51-1a244d8e1f-3d444173d1.zip/node_modules/big-integer/",\
@@ -1990,6 +2002,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["opencv.js", "npm:1.2.1"],\
             ["pinia", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:2.1.6"],\
             ["prettier", "npm:3.0.3"],\
+            ["qr", "npm:0.2.4"],\
             ["qrcode.vue", "virtual:9e04a504e396019965cc3cf7e810098721df5977b4582ef1b29f3253337ed8e26778e7bd5957502f86f679f160c6dec19ec50c131ced94f4b68e97205a657b25#npm:3.4.1"],\
             ["sass", "npm:1.66.1"],\
             ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"],\
@@ -2419,6 +2432,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/delegates-npm-1.0.0-9b1942d75f-a51744d9b5.zip/node_modules/delegates/",\
           "packageDependencies": [\
             ["delegates", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["diff", [\
+        ["npm:4.0.2", {\
+          "packageLocation": "./.yarn/cache/diff-npm-4.0.2-73133c7102-f2c09b0ce4.zip/node_modules/diff/",\
+          "packageDependencies": [\
+            ["diff", "npm:4.0.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2915,6 +2937,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/exponential-backoff-npm-3.1.1-04df458b30-3d21519a4f.zip/node_modules/exponential-backoff/",\
           "packageDependencies": [\
             ["exponential-backoff", "npm:3.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["eyes", [\
+        ["npm:0.1.8", {\
+          "packageLocation": "./.yarn/cache/eyes-npm-0.1.8-4f28ed333f-c31703a92b.zip/node_modules/eyes/",\
+          "packageDependencies": [\
+            ["eyes", "npm:0.1.8"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4773,6 +4804,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["platform", [\
+        ["npm:1.3.6", {\
+          "packageLocation": "./.yarn/cache/platform-npm-1.3.6-8c3cef9352-6f472a09c6.zip/node_modules/platform/",\
+          "packageDependencies": [\
+            ["platform", "npm:1.3.6"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["postcss", [\
         ["npm:8.4.29", {\
           "packageLocation": "./.yarn/cache/postcss-npm-8.4.29-2319a64d31-dd6daa25e7.zip/node_modules/postcss/",\
@@ -4849,6 +4889,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/punycode-npm-2.3.0-df4bdce06b-39f760e09a.zip/node_modules/punycode/",\
           "packageDependencies": [\
             ["punycode", "npm:2.3.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["qr", [\
+        ["npm:0.2.4", {\
+          "packageLocation": "./.yarn/cache/qr-npm-0.2.4-c5b5590528-dec18f28d7.zip/node_modules/qr/",\
+          "packageDependencies": [\
+            ["qr", "npm:0.2.4"],\
+            ["benchmark", "npm:2.1.4"],\
+            ["vows", "npm:0.8.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5791,6 +5842,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "stylus",\
             "sugarss",\
             "terser"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["vows", [\
+        ["npm:0.8.3", {\
+          "packageLocation": "./.yarn/cache/vows-npm-0.8.3-7b934cb7be-10120390ef.zip/node_modules/vows/",\
+          "packageDependencies": [\
+            ["vows", "npm:0.8.3"],\
+            ["diff", "npm:4.0.2"],\
+            ["eyes", "npm:0.1.8"],\
+            ["glob", "npm:7.2.3"]\
           ],\
           "linkType": "HARD"\
         }]\

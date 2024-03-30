@@ -4,7 +4,7 @@ import Layout6 from '@/components/Layout-Frame6.vue'
 import Card from '@/components/Card-View.vue'
 import Navbar from '@/components/navigation-view.vue'
 import router from '@/router';
-
+import aios from "axios"
 
 const layoutWidth = '160px'
 const layoutHeight = '240px'
@@ -13,6 +13,7 @@ const borderWidth = '5px'
 
 
 const paymentsAsync = () => {
+  axios.get(local_server+"/NVCAT/1000")
   router.push('/preshot')
 };
 

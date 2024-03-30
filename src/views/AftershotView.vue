@@ -18,7 +18,7 @@ onMounted(() =>{
         router.push('/photo');
         // const res = axios.get('http://127.0.0.1:8080/downsampling')
         // console.log(res);
-    }, 1000);
+    }, 2000);
 })
 </script>
 <template>

@@ -11,14 +11,15 @@ const borderWidth = '5px'
 
 onMounted(() =>{
     setTimeout(() => {
-        window.chrome.webview.postMessage("buttonClicked");
         window.navigate2next = navigate2next
-    }, 2000);
+        window.chrome.webview.postMessage("buttonClicked");
+        console.log("buttonClicked")
+    }, 1000);
 })
 
 const navigate2next = () => {
     // alert('called' )
-
+    console.log("navigate2next")
     router.push('/aftershot');
 }
 </script>
