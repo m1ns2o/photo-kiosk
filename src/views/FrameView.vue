@@ -46,29 +46,6 @@ const selectItem = (index: number) => {
 </template>
 
 <style lang="scss" scoped>
-/* 
-.card {
-    background-color: gray;
-    height: 400px;
-    width: 10%;
-} */
-
-// h1,
-// h3 {
-// 	color: white;
-// }
-
-// h1 {
-// 	padding-top: 20%;
-// 	padding-bottom: 10%;
-//     margin-bottom: 0px;
-// 	font-size: 7em;
-// }
-
-// h3 {
-// 	font-size: 3em;
-// }
-
 h2 {
   width: 130px;
   height: 40px;

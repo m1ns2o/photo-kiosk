@@ -1,20 +1,3 @@
-<!-- <script lang="ts">
-import router from '@/router'
-
-export default {
-  props: {
-    link: {
-      type: String,
-      default: ''
-    }
-  },
-  methods: {
-    back(): void {
-      router.go(-1)
-    }
-  }
-}
-</script> -->
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 // import { defineProps } from 'vue'
