@@ -9,20 +9,11 @@ import axios from 'axios'
 import Layoutswitch from '@/components/Layout-switch.vue'
 
 const img = usePhotosetStore()
-// const FrameHeight = ref(600)
-// const layoutHeight = computed(() => `${FrameHeight.value}px`)
-
-// const qr = ref('qwre')
-// const layoutWidth = ref('4in')
-
-// const layoutHeight = ref('6in')
-// const borderwidth = ref('10px')
-// const imgHeight = ref('190px')
 
 const disabled = computed(() => img.selected == img.imgLength[img.frame])
 
 onMounted(() =>{
-    axios.get('http://127.0.0.1:8008/imgprocess/grayscale')
+    axios.get('http://127.0.0.1:8008/imgprocess/videoencoding');
     console.log(img.imgLength[img.frame])
 })
 

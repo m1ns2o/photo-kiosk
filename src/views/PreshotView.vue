@@ -10,18 +10,29 @@ const footer = 'none'
 const borderWidth = '5px'
 
 onMounted(() =>{
-    setTimeout(() => {
-        window.navigate2next = navigate2next
-        window.chrome.webview.postMessage("buttonClicked");
-        console.log("buttonClicked")
-    }, 1000);
+    // setTimeout(() => {
+    //     window.navigate2next = navigate2next
+    //     window.openRemoteCapture = openRemoteCapture
+    //     window.chrome.webview.postMessage("buttonClicked");
+    //     console.log("buttonClicked")
+    // }, 1000);
+
+    window.navigate2next = navigate2next
+    // window.openRemoteCapture = openRemoteCapture
+    window.chrome.webview.postMessage("remoteCaptureOpen");
+    // console.log("remoteCaptureOpen")
+
 })
 
 const navigate2next = () => {
     // alert('called' )
-    console.log("navigate2next")
     router.push('/aftershot');
+    console.log("navigate2next")
 }
+
+//  const openRemoteCapture = () => {
+//     window.chrome.webview.postMessage("remoteCaptureOpen");
+//  }
 </script>
 <template>
 		<load>

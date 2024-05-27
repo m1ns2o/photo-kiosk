@@ -32,7 +32,7 @@ const paymentsAsync = async () => {
   console.log(`http://localhost:5000/api/NVCAT?value1=${price}&value2=${tax}&value3=0`)
   // await axios.get(`http://localhost:5129/api/NVCAT?value1=${price}&value2=${tax}&value3=0`)
   try {
-    const response = await axios.get(`http://localhost:5129/api/NVCAT?value1=${price}&value2=${tax}&value3=0`);
+    const response = await axios.get(`http://localhost:5000/api/NVCAT?value1=${price}&value2=${tax}&value3=0`);
     // 요청이 성공한 경우
     console.log("요청 성공:", response.data);
     router.push('/preshot')
@@ -46,7 +46,7 @@ const paymentsAsync = async () => {
 };
 
 const testpage = () => {
-  router.push('/photo')
+  router.push('/preshot')
 }
 
 
